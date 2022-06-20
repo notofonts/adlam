@@ -1,0 +1,8 @@
+buildVariable: true
+familyName: Noto Sans Adlam Unjoined
+googleFonts: true
+includeSubsets:
+- from: Noto Sans
+  name: GF_Latin_Core
+sources:
+- NotoSansAdlamUnjoined.designspace
