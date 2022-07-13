@@ -99,7 +99,7 @@ feature kern {
 table GDEF {
   # automatic
   GlyphClassDef
-    [ Alif-adlam Ba-adlam Bhe-adlam Chi-adlam Daali-adlam Dha-adlam E-adlam Fa-adlam Ga-adlam Gbe-adlam Ha-adlam I-adlam Jiim-adlam Kaf-adlam Kha-adlam Kpo-adlam Laam-adlam Miim-adlam Nha-adlam Nun-adlam Nya-adlam O-adlam Pe-adlam Qaaf-adlam Ra-adlam Sha-adlam Sinnyiiyhe-adlam Tu-adlam U-adlam Va-adlam Waw-adlam Ya-adlam Yhe-adlam Zal-adlam alif-adlam ba-adlam bhe-adlam chi-adlam daali-adlam daali-adlam.medi dha-adlam e-adlam fa-adlam ga-adlam gbe-adlam ha-adlam i-adlam jiim-adlam kaf-adlam kha-adlam kpo-adlam laam-adlam miim-adlam nha-adlam nun-adlam nya-adlam o-adlam pe-adlam qaaf-adlam ra-adlam sha-adlam sinnyiiyhe-adlam tu-adlam u-adlam va-adlam waw-adlam ya-adlam yhe-adlam zal-adlam], # Base
+    [ Alif-adlam Ba-adlam Bhe-adlam Chi-adlam Daali-adlam Dha-adlam E-adlam Fa-adlam Ga-adlam Gbe-adlam Ha-adlam I-adlam Jiim-adlam Kaf-adlam Kha-adlam Kpo-adlam Laam-adlam Miim-adlam Nha-adlam Nun-adlam Nya-adlam O-adlam Pe-adlam Qaaf-adlam Ra-adlam Sha-adlam Sinnyiiyhe-adlam Tu-adlam U-adlam Va-adlam Waw-adlam Ya-adlam Yhe-adlam Zal-adlam alif-adlam ba-adlam bhe-adlam chi-adlam daali-adlam daali-adlam.medi dha-adlam e-adlam fa-adlam ga-adlam gbe-adlam ha-adlam i-adlam jiim-adlam kaf-adlam kha-adlam kpo-adlam laam-adlam miim-adlam nha-adlam nun-adlam nya-adlam o-adlam pe-adlam qaaf-adlam ra-adlam sha-adlam sinnyiiyhe-adlam tu-adlam u-adlam va-adlam waw-adlam ya-adlam yhe-adlam zal-adlam dottedCircle], # Base
     , # Liga
     [aliflengthencomb-adlam aliflengthencomb-adlam.case consonantmodcomb-adlam gemconsonantmodcomb-adlam gemination-adlam gemination-adlam.case hamza-adlam hoortobbhere-adlam hoortobbhere-adlam.below vowellengthencomb-adlam vowellengthencomb-adlam.case], # Mark
     ;
