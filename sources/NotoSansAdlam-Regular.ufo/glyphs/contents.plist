@@ -86,8 +86,6 @@
     <string>F_a-adlam.isol.glif</string>
     <key>Fa-adlam.medi</key>
     <string>F_a-adlam.medi.glif</string>
-    <key>G</key>
-    <string>G_.glif</string>
     <key>Ga-adlam</key>
     <string>G_a-adlam.glif</string>
     <key>Ga-adlam.fina</key>
@@ -190,8 +188,6 @@
     <string>M_iim-adlam.isol.glif</string>
     <key>Miim-adlam.medi</key>
     <string>M_iim-adlam.medi.glif</string>
-    <key>N</key>
-    <string>N_.glif</string>
     <key>NULL</key>
     <string>N_U_L_L_.glif</string>
     <key>Nha-adlam</key>
@@ -298,8 +294,6 @@
     <string>T_u-adlam.medi.glif</string>
     <key>Two-way_connector</key>
     <string>T_wo-way_connector.glif</string>
-    <key>U</key>
-    <string>U_.glif</string>
     <key>U-adlam</key>
     <string>U_-adlam.glif</string>
     <key>U-adlam.fina</key>
@@ -310,8 +304,6 @@
     <string>U_-adlam.isol.glif</string>
     <key>U-adlam.medi</key>
     <string>U_-adlam.medi.glif</string>
-    <key>V</key>
-    <string>V_.glif</string>
     <key>Va-adlam</key>
     <string>V_a-adlam.glif</string>
     <key>Va-adlam.fina</key>
@@ -322,8 +314,6 @@
     <string>V_a-adlam.isol.glif</string>
     <key>Va-adlam.medi</key>
     <string>V_a-adlam.medi.glif</string>
-    <key>W</key>
-    <string>W_.glif</string>
     <key>Waw-adlam</key>
     <string>W_aw-adlam.glif</string>
     <key>Waw-adlam.fina</key>
