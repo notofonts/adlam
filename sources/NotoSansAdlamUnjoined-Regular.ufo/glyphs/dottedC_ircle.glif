@@ -5,6 +5,11 @@
   <note>
 uni25CC
 </note>
+  <anchor x="377" y="618" name="gemconsonanttop"/>
+  <anchor x="385" y="618" name="top"/>
+  <anchor x="220" y="671" name="topAlif"/>
+  <anchor x="370" y="0" name="bottom"/>
+  <anchor x="428" y="555" name="vowellengthencomb-adlam.case"/>
   <outline>
     <contour>
       <point x="455" y="423" type="curve" smooth="yes"/>
