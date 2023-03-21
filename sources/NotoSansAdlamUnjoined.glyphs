@@ -1,7 +1,7 @@
 {
 .appVersion = "3180";
 DisplayStrings = (
-"/dottedCircle"
+"/gemconsonantmodcomb-adlam"
 );
 classes = (
 {
@@ -6769,6 +6769,10 @@ anchors = (
 {
 name = _top;
 position = "{181, 470}";
+},
+{
+name = top;
+position = "{183, 806}";
 }
 );
 layerId = "E0DE3C87-4967-4D78-A749-2B5C9374D58B";
@@ -6795,6 +6799,10 @@ anchors = (
 {
 name = _top;
 position = "{212, 470}";
+},
+{
+name = top;
+position = "{213, 806}";
 }
 );
 layerId = "8EB28FBC-9E0E-48FB-BF6B-CCA3D0470007";
@@ -9443,6 +9451,10 @@ anchors = (
 {
 name = _gemconsonanttop;
 position = "{224, 470}";
+},
+{
+name = top;
+position = "{253, 776}";
 }
 );
 layerId = "E0DE3C87-4967-4D78-A749-2B5C9374D58B";
@@ -9478,6 +9490,10 @@ anchors = (
 {
 name = _gemconsonanttop;
 position = "{294, 470}";
+},
+{
+name = top;
+position = "{303, 806}";
 }
 );
 layerId = "8EB28FBC-9E0E-48FB-BF6B-CCA3D0470007";

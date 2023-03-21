@@ -2,8 +2,9 @@
 .appVersion = "3180";
 DisplayStrings = (
 "/laam-adlam.init/yhe-adlam.fina",
-"/dottedCircle",
-"/aliflengthencomb-adlam.case"
+"/hamza-adlam",
+"/aliflengthencomb-adlam.case",
+"/gemconsonantmodcomb-adlam"
 );
 classes = (
 {
@@ -29900,6 +29901,10 @@ anchors = (
 {
 name = _top;
 position = "{181, 470}";
+},
+{
+name = top;
+position = "{178, 763}";
 }
 );
 layerId = "B0FCDF77-85CD-41D2-A2A0-D0893F1A1A59";
@@ -29926,6 +29931,10 @@ anchors = (
 {
 name = _top;
 position = "{212, 470}";
+},
+{
+name = top;
+position = "{218, 783}";
 }
 );
 layerId = "6CB8ADAF-854D-4ED0-880B-EED1FC4797A7";
@@ -36145,6 +36154,10 @@ anchors = (
 {
 name = _gemconsonanttop;
 position = "{224, 470}";
+},
+{
+name = top;
+position = "{256, 758}";
 }
 );
 layerId = "B0FCDF77-85CD-41D2-A2A0-D0893F1A1A59";
@@ -36180,6 +36193,10 @@ anchors = (
 {
 name = _gemconsonanttop;
 position = "{294, 470}";
+},
+{
+name = top;
+position = "{296, 768}";
 }
 );
 layerId = "6CB8ADAF-854D-4ED0-880B-EED1FC4797A7";
