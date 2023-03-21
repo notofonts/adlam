@@ -690,7 +690,7 @@ code = "feature init;\012feature medi;\012feature fina;\012feature case;\012";
 name = aalt;
 },
 {
-code = "script adlm;\012lookup ccmp_Other_1 {\012	@Markscomb = [aliflengthencomb-adlam gemination-adlam vowellengthencomb-adlam];\012	@MarkscombCase = [aliflengthencomb-adlam.case gemination-adlam.case vowellengthencomb-adlam.case];\012	sub @Uppercase @Markscomb' by @MarkscombCase;\012	sub @adlamLetters @adlamDia hoortobbhere-adlam' by hoortobbhere-adlam.below;\012	sub @adlamLetters hoortobbhere-adlam' @adlamDia by hoortobbhere-adlam.below;\012} ccmp_Other_1;\012\012\012\012";
+code = "script adlm;\012@Markscomb = [aliflengthencomb-adlam gemination-adlam vowellengthencomb-adlam];\012@MarkscombCase = [aliflengthencomb-adlam.case gemination-adlam.case vowellengthencomb-adlam.case];\012\012lookup ccmp_Other_1 {\012	lookupflag UseMarkFilteringSet [@Markscomb hoortobbhere-adlam];\012	sub @Uppercase @Markscomb' by @MarkscombCase;\012	sub @adlamLetters @adlamDia hoortobbhere-adlam' by hoortobbhere-adlam.below;\012	sub @adlamLetters hoortobbhere-adlam' @adlamDia by hoortobbhere-adlam.below;\012} ccmp_Other_1;\012\012\012\012";
 name = ccmp;
 },
 {
