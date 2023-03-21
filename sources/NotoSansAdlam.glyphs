@@ -706,7 +706,7 @@ code = "script adlm;\012sub Alif-adlam by Alif-adlam.fina;\012sub Daali-adlam by
 name = fina;
 },
 {
-code = "script adlm;\012sub @Lowercase by @Uppercase;\012sub aliflengthencomb-adlam by aliflengthencomb-adlam.case;\012sub vowellengthencomb-adlam by vowellengthencomb-adlam.case;\012sub gemination-adlam by gemination-adlam.case;\012";
+code = "script adlm;\012sub aliflengthencomb-adlam by aliflengthencomb-adlam.case;\012sub vowellengthencomb-adlam by vowellengthencomb-adlam.case;\012sub gemination-adlam by gemination-adlam.case;\012";
 name = case;
 },
 {

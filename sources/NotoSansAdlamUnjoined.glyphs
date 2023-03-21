@@ -404,7 +404,7 @@ code = "sub daali-adlam by daali-adlam.medi;";
 name = medi;
 },
 {
-code = "sub @Lowercase by @Uppercase;\012sub aliflengthencomb-adlam by aliflengthencomb-adlam.case;\012sub vowellengthencomb-adlam by vowellengthencomb-adlam.case;\012sub gemination-adlam by gemination-adlam.case;\012";
+code = "sub aliflengthencomb-adlam by aliflengthencomb-adlam.case;\012sub vowellengthencomb-adlam by vowellengthencomb-adlam.case;\012sub gemination-adlam by gemination-adlam.case;\012";
 name = case;
 },
 {
