@@ -1,9 +1,5 @@
 {
-.appVersion = "1271";
-DisplayStrings = (
-"/Alif-adlam/Daali-adlam/Laam-adlam/Miim-adlam/Ba-adlam/Sinnyiiyhe-adlam/Pe-adlam/Bhe-adlam/Ra-adlam/E-adlam/Nya-adlam/Tu-adlam/Nha-adlam/Va-adlam/Kha-adlam/Gbe-adlam/Zal-adlam/Kpo-adlam/Sha-adlam/alif-adlam/daali-adlam/laam-adlam/miim-adlam/ba-adlam/sinnyiiyhe-adlam/pe-adlam/bhe-adlam/ra-adlam/e-adlam/nya-adlam/tu-adlam/nha-adlam/va-adlam/kha-adlam/gbe-adlam/zal-adlam/kpo-adlam/sha-adlam/daali-adlam.medi",
-"/aliflengthencomb-adlam.case"
-);
+.appVersion = "3180";
 classes = (
 {
 code = "Alif-adlam Daali-adlam Daali-adlam Laam-adlam Miim-adlam Ba-adlam Sinnyiiyhe-adlam Pe-adlam Bhe-adlam Ra-adlam E-adlam Fa-adlam I-adlam O-adlam Dha-adlam Yhe-adlam Waw-adlam Nun-adlam Kaf-adlam Ya-adlam U-adlam Jiim-adlam Chi-adlam Ha-adlam Qaaf-adlam Ga-adlam Nya-adlam Tu-adlam Nha-adlam Va-adlam Kha-adlam Gbe-adlam Zal-adlam Kpo-adlam Sha-adlam";
@@ -81,26 +77,6 @@ value = (
 31,
 57
 );
-},
-{
-name = license;
-value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL";
-},
-{
-name = licenseURL;
-value = "https://scripts.sil.org/OFL";
-},
-{
-name = trademark;
-value = "Noto is a trademark of Google LLC.";
-},
-{
-name = description;
-value = "Designed by Mark Jamra, Neil Patel.";
-},
-{
-name = vendorID;
-value = GOOG;
 },
 {
 name = styleMapFamilyName;
@@ -359,6 +335,35 @@ value = (
 {
 name = "Disable Last Change";
 value = 1;
+},
+{
+name = license;
+value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL";
+},
+{
+name = licenseURL;
+value = "https://scripts.sil.org/OFL";
+},
+{
+name = trademark;
+value = "Noto is a trademark of Google LLC.";
+},
+{
+name = description;
+value = "Designed by Mark Jamra, Neil Patel.";
+},
+{
+name = vendorID;
+value = GOOG;
+},
+{
+name = Axes;
+value = (
+{
+Name = Weight;
+Tag = wght;
+}
+);
 }
 );
 date = "2019-12-02 21:29:34 +0000";
@@ -400,8 +405,8 @@ code = "sub @Lowercase by @Uppercase;\012sub aliflengthencomb-adlam by aliflengt
 name = case;
 },
 {
-disabled = 1;
 code = "lookupflag IgnoreMarks RightToLeft;\012\012Qaaf-adlam;Ha-adlam;-20\012Ha-adlam;Ha-adlam;-50\012Ha-adlam;ha-adlam;-50\012Ya-adlam;Ha-adlam;-20\012Ya-adlam;ha-adlam;-30\012Yhe-adlam;Ba-adlam;-30\012Yhe-adlam;Ra-adlam;-20\012Yhe-adlam;O-adlam;-20\012Yhe-adlam;Kha-adlam;-40\012ha-adlam;yhe-adlam;20\012Bhe-adlam;ha-adlam;-30\012five-adlam;four-adlam;-20\012five-adlam;nine-adlam;-30\012Kaf-adlam;Ha-adlam;-20\012Kaf-adlam;ha-adlam;-30\012Laam-adlam;ha-adlam;-20\012Miim-adlam;ha-adlam;-20\012four-adlam;nine-adlam;-85\012six-adlam;nine-adlam;-30\012\012\012Qaaf-adlam;Ha-adlam;-20\012Ha-adlam;Ha-adlam;-40\012Ha-adlam;ha-adlam;-50\012Ya-adlam;ha-adlam;-30\012Yhe-adlam;Ba-adlam;-30\012Yhe-adlam;Ra-adlam;-20\012Yhe-adlam;O-adlam;-20\012Yhe-adlam;Kha-adlam;-20\012Ga-adlam;Ha-adlam;-10\012ha-adlam;yhe-adlam;20\012Bhe-adlam;Ha-adlam;-20\012Bhe-adlam;ha-adlam;-30\012five-adlam;nine-adlam;-15\012Kaf-adlam;ha-adlam;-20\012Chi-adlam;Ha-adlam;-20\012Laam-adlam;ha-adlam;-30\012Miim-adlam;ha-adlam;-30\012four-adlam;nine-adlam;-70\012six-adlam;nine-adlam;-30\012";
+disabled = 1;
 name = kern;
 }
 );
@@ -719,7 +724,6 @@ vertWidth = 0;
 width = 600;
 }
 );
-note = "";
 },
 {
 glyphname = "Alif-adlam";
@@ -868,7 +872,6 @@ vertWidth = 0;
 width = 745;
 }
 );
-note = "";
 unicode = 1E900;
 },
 {
@@ -1006,7 +1009,6 @@ vertWidth = 0;
 width = 830;
 }
 );
-note = "";
 unicode = 1E904;
 },
 {
@@ -1142,7 +1144,6 @@ vertWidth = 0;
 width = 698;
 }
 );
-note = "";
 unicode = 1E907;
 },
 {
@@ -1159,7 +1160,6 @@ vertWidth = 0;
 width = 200;
 }
 );
-note = "";
 unicode = 000D;
 },
 {
@@ -1293,7 +1293,6 @@ vertWidth = 0;
 width = 750;
 }
 );
-note = "";
 unicode = 1E915;
 },
 {
@@ -1403,7 +1402,6 @@ vertWidth = 0;
 width = 638;
 }
 );
-note = "";
 unicode = 1E901;
 },
 {
@@ -1547,7 +1545,6 @@ vertWidth = 0;
 width = 744;
 }
 );
-note = "";
 unicode = 1E90D;
 },
 {
@@ -1747,7 +1744,6 @@ vertWidth = 0;
 width = 764;
 }
 );
-note = "";
 unicode = 1E909;
 },
 {
@@ -1849,7 +1845,6 @@ vertWidth = 0;
 width = 679;
 }
 );
-note = "";
 unicode = 1E90A;
 },
 {
@@ -1981,7 +1976,6 @@ vertWidth = 0;
 width = 659;
 }
 );
-note = "";
 unicode = 1E918;
 },
 {
@@ -2099,7 +2093,6 @@ vertWidth = 0;
 width = 694;
 }
 );
-note = "";
 unicode = 1E91E;
 },
 {
@@ -2203,7 +2196,6 @@ vertWidth = 0;
 width = 660;
 }
 );
-note = "";
 unicode = 1E916;
 },
 {
@@ -2283,7 +2275,6 @@ vertWidth = 0;
 width = 815;
 }
 );
-note = "";
 unicode = 1E90B;
 },
 {
@@ -2439,7 +2430,6 @@ vertWidth = 0;
 width = 922;
 }
 );
-note = "";
 unicode = 1E914;
 },
 {
@@ -2547,7 +2537,6 @@ vertWidth = 0;
 width = 784;
 }
 );
-note = "";
 unicode = 1E911;
 },
 {
@@ -2655,7 +2644,6 @@ vertWidth = 0;
 width = 753;
 }
 );
-note = "";
 unicode = 1E91D;
 },
 {
@@ -2771,7 +2759,6 @@ vertWidth = 0;
 width = 701;
 }
 );
-note = "";
 unicode = 1E920;
 },
 {
@@ -2907,7 +2894,6 @@ vertWidth = 0;
 width = 867;
 }
 );
-note = "";
 unicode = 1E902;
 },
 {
@@ -3031,7 +3017,6 @@ vertWidth = 0;
 width = 669;
 }
 );
-note = "";
 unicode = 1E903;
 },
 {
@@ -3048,7 +3033,6 @@ vertWidth = 0;
 width = 0;
 }
 );
-note = "";
 unicode = 0000;
 },
 {
@@ -3194,7 +3178,6 @@ vertWidth = 0;
 width = 778;
 }
 );
-note = "";
 unicode = 1E91B;
 },
 {
@@ -3340,7 +3323,6 @@ vertWidth = 0;
 width = 692;
 }
 );
-note = "";
 unicode = 1E910;
 },
 {
@@ -3476,7 +3458,6 @@ vertWidth = 0;
 width = 713;
 }
 );
-note = "";
 unicode = 1E919;
 },
 {
@@ -3580,7 +3561,6 @@ vertWidth = 0;
 width = 726;
 }
 );
-note = "";
 unicode = 1E90C;
 },
 {
@@ -3684,7 +3664,6 @@ vertWidth = 0;
 width = 630;
 }
 );
-note = "";
 unicode = 1E906;
 },
 {
@@ -3822,7 +3801,6 @@ vertWidth = 0;
 width = 827;
 }
 );
-note = "";
 unicode = 1E917;
 },
 {
@@ -3924,7 +3902,6 @@ vertWidth = 0;
 width = 711;
 }
 );
-note = "";
 unicode = 1E908;
 },
 {
@@ -4036,7 +4013,6 @@ vertWidth = 0;
 width = 874;
 }
 );
-note = "";
 unicode = 1E921;
 },
 {
@@ -4180,7 +4156,6 @@ vertWidth = 0;
 width = 933;
 }
 );
-note = "";
 unicode = 1E905;
 },
 {
@@ -4324,7 +4299,6 @@ vertWidth = 0;
 width = 953;
 }
 );
-note = "";
 unicode = 1E91A;
 },
 {
@@ -4510,7 +4484,6 @@ vertWidth = 0;
 width = 858;
 }
 );
-note = "";
 unicode = 1E913;
 },
 {
@@ -4590,7 +4563,6 @@ vertWidth = 0;
 width = 689;
 }
 );
-note = "";
 unicode = 1E91C;
 },
 {
@@ -4682,7 +4654,6 @@ vertWidth = 0;
 width = 689;
 }
 );
-note = "";
 unicode = 1E90F;
 },
 {
@@ -4810,7 +4781,6 @@ vertWidth = 0;
 width = 567;
 }
 );
-note = "";
 unicode = 1E912;
 },
 {
@@ -4906,7 +4876,6 @@ vertWidth = 0;
 width = 658;
 }
 );
-note = "";
 unicode = 1E90E;
 },
 {
@@ -5018,7 +4987,6 @@ vertWidth = 0;
 width = 854;
 }
 );
-note = "";
 unicode = 1E91F;
 },
 {
@@ -5058,7 +5026,6 @@ vertWidth = 0;
 width = 1000;
 }
 );
-note = "";
 unicode = 2015;
 },
 {
@@ -5190,7 +5157,6 @@ vertWidth = 0;
 width = 676;
 }
 );
-note = "";
 unicode = 1E922;
 },
 {
@@ -5266,7 +5232,6 @@ vertWidth = 0;
 width = 564;
 }
 );
-note = "";
 unicode = 1E944;
 },
 {
@@ -5296,7 +5261,6 @@ nodes = (
 );
 }
 );
-vertWidth = 0;
 };
 layerId = "E0DE3C87-4967-4D78-A749-2B5C9374D58B";
 paths = (
@@ -5502,7 +5466,6 @@ vertWidth = 0;
 width = 750;
 }
 );
-note = "";
 unicode = 0026;
 },
 {
@@ -5542,7 +5505,6 @@ vertWidth = 0;
 width = 202;
 }
 );
-note = "";
 unicode = 1E94B;
 },
 {
@@ -5587,7 +5549,6 @@ vertWidth = 0;
 width = 572;
 }
 );
-note = "";
 unicode = 005E;
 },
 {
@@ -5648,7 +5609,6 @@ vertWidth = 0;
 width = 545;
 }
 );
-note = "";
 unicode = 002A;
 },
 {
@@ -5823,7 +5783,6 @@ vertWidth = 0;
 width = 897;
 }
 );
-note = "";
 unicode = 0040;
 },
 {
@@ -5949,7 +5908,6 @@ vertWidth = 0;
 width = 755;
 }
 );
-note = "";
 unicode = 1E926;
 },
 {
@@ -5988,7 +5946,6 @@ vertWidth = 0;
 width = 413;
 }
 );
-note = "";
 unicode = 005C;
 },
 {
@@ -6027,7 +5984,6 @@ vertWidth = 0;
 width = 551;
 }
 );
-note = "";
 unicode = 007C;
 },
 {
@@ -6149,7 +6105,6 @@ vertWidth = 0;
 width = 577;
 }
 );
-note = "";
 unicode = 1E929;
 },
 {
@@ -6244,7 +6199,6 @@ vertWidth = 0;
 width = 394;
 }
 );
-note = "";
 unicode = 007B;
 },
 {
@@ -6339,7 +6293,6 @@ vertWidth = 0;
 width = 394;
 }
 );
-note = "";
 unicode = 007D;
 },
 {
@@ -6386,7 +6339,6 @@ vertWidth = 0;
 width = 331;
 }
 );
-note = "";
 unicode = 005B;
 },
 {
@@ -6433,7 +6385,6 @@ vertWidth = 0;
 width = 331;
 }
 );
-note = "";
 unicode = 005D;
 },
 {
@@ -6488,7 +6439,6 @@ vertWidth = 0;
 width = 376;
 }
 );
-note = "";
 unicode = 2022;
 },
 {
@@ -6620,7 +6570,6 @@ vertWidth = 0;
 width = 749;
 }
 );
-note = "";
 unicode = 1E937;
 },
 {
@@ -6709,7 +6658,6 @@ vertWidth = 0;
 width = 285;
 }
 );
-note = "";
 unicode = 003A;
 },
 {
@@ -6758,7 +6706,6 @@ vertWidth = 0;
 width = 285;
 }
 );
-note = "";
 unicode = 002C;
 },
 {
@@ -6808,7 +6755,6 @@ vertWidth = 0;
 width = 285;
 }
 );
-note = "";
 unicode = 2E41;
 },
 {
@@ -6868,7 +6814,6 @@ vertWidth = 0;
 width = 426;
 }
 );
-note = "";
 unicode = 1E948;
 },
 {
@@ -6976,7 +6921,6 @@ vertWidth = 0;
 width = 620;
 }
 );
-note = "";
 unicode = 1E923;
 },
 {
@@ -7084,7 +7028,6 @@ vertWidth = 0;
 width = 620;
 }
 );
-note = "";
 },
 {
 glyphname = dagger;
@@ -7213,7 +7156,6 @@ vertWidth = 0;
 width = 516;
 }
 );
-note = "";
 unicode = 2021;
 },
 {
@@ -7335,7 +7277,6 @@ vertWidth = 0;
 width = 719;
 }
 );
-note = "";
 unicode = 1E92F;
 },
 {
@@ -7482,7 +7423,6 @@ vertWidth = 0;
 width = 572;
 }
 );
-note = "";
 unicode = 0024;
 },
 {
@@ -7491,6 +7431,10 @@ production = uni25CC;
 layers = (
 {
 anchors = (
+{
+name = bottom;
+position = "{370, 0}";
+},
 {
 name = gemconsonanttop;
 position = "{377, 618}";
@@ -7502,10 +7446,6 @@ position = "{385, 618}";
 {
 name = topAlif;
 position = "{220, 671}";
-},
-{
-name = bottom;
-position = "{370, 0}";
 },
 {
 name = "vowellengthencomb-adlam.case";
@@ -7793,6 +7733,10 @@ width = 594;
 {
 anchors = (
 {
+name = bottom;
+position = "{351, 0}";
+},
+{
 name = gemconsonanttop;
 position = "{354, 625}";
 },
@@ -7803,10 +7747,6 @@ position = "{364, 624}";
 {
 name = topAlif;
 position = "{216, 689}";
-},
-{
-name = bottom;
-position = "{351, 0}";
 },
 {
 name = "vowellengthencomb-adlam.case";
@@ -8244,7 +8184,6 @@ vertWidth = 0;
 width = 702;
 }
 );
-note = "";
 unicode = 1E92B;
 },
 {
@@ -8378,7 +8317,6 @@ vertWidth = 0;
 width = 669;
 }
 );
-note = "";
 unicode = 1E958;
 },
 {
@@ -8501,7 +8439,6 @@ vertWidth = 0;
 width = 855;
 }
 );
-note = "";
 unicode = 2026;
 },
 {
@@ -8540,7 +8477,6 @@ vertWidth = 0;
 width = 1000;
 }
 );
-note = "";
 unicode = 2014;
 },
 {
@@ -8579,7 +8515,6 @@ vertWidth = 0;
 width = 500;
 }
 );
-note = "";
 unicode = 2013;
 },
 {
@@ -8636,7 +8571,6 @@ vertWidth = 0;
 width = 572;
 }
 );
-note = "";
 unicode = 003D;
 },
 {
@@ -8709,7 +8643,6 @@ vertWidth = 0;
 width = 286;
 }
 );
-note = "";
 unicode = 0021;
 },
 {
@@ -8841,7 +8774,6 @@ vertWidth = 0;
 width = 563;
 }
 );
-note = "";
 unicode = 1E95E;
 },
 {
@@ -8955,7 +8887,6 @@ vertWidth = 0;
 width = 651;
 }
 );
-note = "";
 unicode = 1E92C;
 },
 {
@@ -9151,7 +9082,6 @@ vertWidth = 0;
 width = 630;
 }
 );
-note = "";
 unicode = 1E955;
 },
 {
@@ -9247,47 +9177,7 @@ vertWidth = 0;
 width = 607;
 }
 );
-note = "";
 unicode = 1E954;
-},
-{
-glyphname = fraction;
-layers = (
-{
-layerId = "E0DE3C87-4967-4D78-A749-2B5C9374D58B";
-paths = (
-{
-closed = 1;
-nodes = (
-"244 714 LINE",
-"-192 0 LINE",
-"-117 0 LINE",
-"319 714 LINE"
-);
-}
-);
-vertWidth = 0;
-width = 128;
-},
-{
-layerId = "8EB28FBC-9E0E-48FB-BF6B-CCA3D0470007";
-paths = (
-{
-closed = 1;
-nodes = (
-"204 714 LINE",
-"-192 0 LINE",
-"-75 0 LINE",
-"321 714 LINE"
-);
-}
-);
-vertWidth = 0;
-width = 130;
-}
-);
-note = "";
-unicode = 2044;
 },
 {
 glyphname = "ga-adlam";
@@ -9418,7 +9308,6 @@ vertWidth = 0;
 width = 605;
 }
 );
-note = "";
 unicode = 1E93A;
 },
 {
@@ -9540,7 +9429,6 @@ vertWidth = 0;
 width = 577;
 }
 );
-note = "";
 unicode = 1E940;
 },
 {
@@ -9618,7 +9506,6 @@ vertWidth = 0;
 width = 594;
 }
 );
-note = "";
 unicode = 1E949;
 },
 {
@@ -9694,7 +9581,6 @@ vertWidth = 0;
 width = 469;
 }
 );
-note = "";
 unicode = 1E946;
 },
 {
@@ -9814,7 +9700,6 @@ vertWidth = 0;
 width = 572;
 }
 );
-note = "";
 unicode = 003E;
 },
 {
@@ -9883,7 +9768,6 @@ vertWidth = 0;
 width = 615;
 }
 );
-note = "";
 unicode = 00AB;
 },
 {
@@ -9952,7 +9836,6 @@ vertWidth = 0;
 width = 615;
 }
 );
-note = "";
 unicode = 00BB;
 },
 {
@@ -9997,7 +9880,6 @@ vertWidth = 0;
 width = 368;
 }
 );
-note = "";
 unicode = 2039;
 },
 {
@@ -10042,7 +9924,6 @@ vertWidth = 0;
 width = 368;
 }
 );
-note = "";
 unicode = 203A;
 },
 {
@@ -10146,7 +10027,6 @@ vertWidth = 0;
 width = 558;
 }
 );
-note = "";
 unicode = 1E938;
 },
 {
@@ -10242,7 +10122,6 @@ vertWidth = 0;
 width = 477;
 }
 );
-note = "";
 unicode = 1E947;
 },
 {
@@ -10310,7 +10189,6 @@ vertWidth = 0;
 width = 211;
 }
 );
-note = "";
 unicode = 1E94A;
 },
 {
@@ -10378,7 +10256,6 @@ vertWidth = 0;
 width = 211;
 }
 );
-note = "";
 },
 {
 glyphname = hyphen;
@@ -10416,7 +10293,6 @@ vertWidth = 0;
 width = 322;
 }
 );
-note = "";
 unicode = 002D;
 },
 {
@@ -10496,7 +10372,6 @@ vertWidth = 0;
 width = 722;
 }
 );
-note = "";
 unicode = 1E92D;
 },
 {
@@ -10624,7 +10499,6 @@ vertWidth = 0;
 width = 822;
 }
 );
-note = "";
 unicode = 1E936;
 },
 {
@@ -10732,7 +10606,6 @@ vertWidth = 0;
 width = 659;
 }
 );
-note = "";
 unicode = 1E933;
 },
 {
@@ -10772,7 +10645,6 @@ vertWidth = 0;
 width = 285;
 }
 );
-note = "";
 unicode = 0640;
 },
 {
@@ -10880,7 +10752,6 @@ vertWidth = 0;
 width = 664;
 }
 );
-note = "";
 unicode = 1E93F;
 },
 {
@@ -11002,7 +10873,6 @@ vertWidth = 0;
 width = 638;
 }
 );
-note = "";
 unicode = 1E942;
 },
 {
@@ -11098,7 +10968,6 @@ vertWidth = 0;
 width = 616;
 }
 );
-note = "";
 unicode = 1E924;
 },
 {
@@ -11196,7 +11065,6 @@ vertWidth = 0;
 width = 556;
 }
 );
-note = "";
 unicode = 2E28;
 },
 {
@@ -11241,7 +11109,6 @@ vertWidth = 0;
 width = 572;
 }
 );
-note = "";
 unicode = 003C;
 },
 {
@@ -11367,7 +11234,6 @@ vertWidth = 0;
 width = 618;
 }
 );
-note = "";
 unicode = 1E925;
 },
 {
@@ -11385,7 +11251,6 @@ vertWidth = 0;
 width = 200;
 }
 );
-note = "";
 unicode = 00A0;
 },
 {
@@ -11529,7 +11394,6 @@ vertWidth = 0;
 width = 677;
 }
 );
-note = "";
 unicode = 1E93D;
 },
 {
@@ -11653,7 +11517,6 @@ vertWidth = 0;
 width = 626;
 }
 );
-note = "";
 unicode = 1E959;
 },
 {
@@ -11758,7 +11621,6 @@ vertWidth = 0;
 width = 646;
 }
 );
-note = "";
 unicode = 0023;
 },
 {
@@ -11870,7 +11732,6 @@ vertWidth = 0;
 width = 550;
 }
 );
-note = "";
 unicode = 1E932;
 },
 {
@@ -12008,7 +11869,6 @@ vertWidth = 0;
 width = 628;
 }
 );
-note = "";
 unicode = 1E93B;
 },
 {
@@ -12104,7 +11964,6 @@ vertWidth = 0;
 width = 660;
 }
 );
-note = "";
 unicode = 1E92E;
 },
 {
@@ -12144,7 +12003,6 @@ vertWidth = 0;
 width = 350;
 }
 );
-note = "";
 unicode = 1E951;
 },
 {
@@ -12203,7 +12061,6 @@ vertWidth = 0;
 width = 339;
 }
 );
-note = "";
 unicode = 0028;
 },
 {
@@ -12262,7 +12119,6 @@ vertWidth = 0;
 width = 339;
 }
 );
-note = "";
 unicode = 0029;
 },
 {
@@ -12366,7 +12222,6 @@ vertWidth = 0;
 width = 567;
 }
 );
-note = "";
 unicode = 1E928;
 },
 {
@@ -12541,7 +12396,6 @@ vertWidth = 0;
 width = 901;
 }
 );
-note = "";
 unicode = 0025;
 },
 {
@@ -12596,7 +12450,6 @@ vertWidth = 0;
 width = 285;
 }
 );
-note = "";
 unicode = 002E;
 },
 {
@@ -12839,7 +12692,6 @@ vertWidth = 0;
 width = 1281;
 }
 );
-note = "";
 unicode = 2030;
 },
 {
@@ -12894,7 +12746,6 @@ vertWidth = 0;
 width = 572;
 }
 );
-note = "";
 unicode = 002B;
 },
 {
@@ -13046,7 +12897,6 @@ vertWidth = 0;
 width = 800;
 }
 );
-note = "";
 unicode = 1E939;
 },
 {
@@ -13167,7 +13017,6 @@ vertWidth = 0;
 width = 477;
 }
 );
-note = "";
 unicode = 003F;
 },
 {
@@ -13313,7 +13162,6 @@ vertWidth = 0;
 width = 680;
 }
 );
-note = "";
 unicode = 1E95F;
 },
 {
@@ -13435,7 +13283,6 @@ vertWidth = 0;
 width = 477;
 }
 );
-note = "";
 unicode = 061F;
 },
 {
@@ -13492,7 +13339,6 @@ vertWidth = 0;
 width = 472;
 }
 );
-note = "";
 unicode = 0022;
 },
 {
@@ -13569,7 +13415,6 @@ vertWidth = 0;
 width = 513;
 }
 );
-note = "";
 unicode = 201E;
 },
 {
@@ -13646,7 +13491,6 @@ vertWidth = 0;
 width = 445;
 }
 );
-note = "";
 unicode = 201C;
 },
 {
@@ -13723,7 +13567,6 @@ vertWidth = 0;
 width = 445;
 }
 );
-note = "";
 unicode = 201D;
 },
 {
@@ -13772,7 +13615,6 @@ vertWidth = 0;
 width = 217;
 }
 );
-note = "";
 unicode = 2018;
 },
 {
@@ -13821,7 +13663,6 @@ vertWidth = 0;
 width = 217;
 }
 );
-note = "";
 unicode = 201B;
 },
 {
@@ -13870,7 +13711,6 @@ vertWidth = 0;
 width = 217;
 }
 );
-note = "";
 unicode = 2019;
 },
 {
@@ -13919,7 +13759,6 @@ vertWidth = 0;
 width = 285;
 }
 );
-note = "";
 unicode = 201A;
 },
 {
@@ -13958,7 +13797,6 @@ vertWidth = 0;
 width = 266;
 }
 );
-note = "";
 unicode = 0027;
 },
 {
@@ -14060,7 +13898,6 @@ vertWidth = 0;
 width = 659;
 }
 );
-note = "";
 unicode = 1E92A;
 },
 {
@@ -14144,7 +13981,6 @@ vertWidth = 0;
 width = 316;
 }
 );
-note = "";
 unicode = 204F;
 },
 {
@@ -14242,7 +14078,6 @@ vertWidth = 0;
 width = 558;
 }
 );
-note = "";
 unicode = 2E29;
 },
 {
@@ -14325,7 +14160,6 @@ vertWidth = 0;
 width = 285;
 }
 );
-note = "";
 unicode = 003B;
 },
 {
@@ -14459,7 +14293,6 @@ vertWidth = 0;
 width = 679;
 }
 );
-note = "";
 unicode = 1E957;
 },
 {
@@ -14563,7 +14396,6 @@ vertWidth = 0;
 width = 819;
 }
 );
-note = "";
 unicode = 1E943;
 },
 {
@@ -14691,7 +14523,6 @@ vertWidth = 0;
 width = 877;
 }
 );
-note = "";
 unicode = 1E927;
 },
 {
@@ -14847,7 +14678,6 @@ vertWidth = 0;
 width = 685;
 }
 );
-note = "";
 unicode = 1E956;
 },
 {
@@ -14886,7 +14716,6 @@ vertWidth = 0;
 width = 413;
 }
 );
-note = "";
 unicode = 002F;
 },
 {
@@ -14903,7 +14732,6 @@ vertWidth = 0;
 width = 200;
 }
 );
-note = "";
 unicode = 0020;
 },
 {
@@ -15003,7 +14831,6 @@ vertWidth = 0;
 width = 640;
 }
 );
-note = "";
 unicode = 1E953;
 },
 {
@@ -15147,7 +14974,6 @@ vertWidth = 0;
 width = 823;
 }
 );
-note = "";
 unicode = 1E93C;
 },
 {
@@ -15233,7 +15059,6 @@ vertWidth = 0;
 width = 480;
 }
 );
-note = "";
 unicode = 1E952;
 },
 {
@@ -15405,7 +15230,6 @@ vertWidth = 0;
 width = 737;
 }
 );
-note = "";
 unicode = 1E935;
 },
 {
@@ -15444,7 +15268,6 @@ vertWidth = 0;
 width = 411;
 }
 );
-note = "";
 unicode = 005F;
 },
 {
@@ -15550,7 +15373,6 @@ vertWidth = 0;
 width = 616;
 }
 );
-note = "";
 unicode = 1E93E;
 },
 {
@@ -15642,7 +15464,6 @@ vertWidth = 0;
 width = 453;
 }
 );
-note = "";
 unicode = 1E945;
 },
 {
@@ -15714,7 +15535,6 @@ vertWidth = 0;
 width = 252;
 }
 );
-note = "";
 },
 {
 glyphname = "waw-adlam";
@@ -15819,7 +15639,6 @@ vertWidth = 0;
 width = 616;
 }
 );
-note = "";
 unicode = 1E931;
 },
 {
@@ -15935,7 +15754,6 @@ vertWidth = 0;
 width = 530;
 }
 );
-note = "";
 unicode = 1E934;
 },
 {
@@ -16033,7 +15851,6 @@ vertWidth = 0;
 width = 628;
 }
 );
-note = "";
 unicode = 1E930;
 },
 {
@@ -16193,7 +16010,6 @@ vertWidth = 0;
 width = 807;
 }
 );
-note = "";
 unicode = 1E941;
 },
 {
@@ -16277,7 +16093,6 @@ vertWidth = 0;
 width = 675;
 }
 );
-note = "";
 unicode = 1E950;
 }
 );
@@ -16290,8 +16105,10 @@ value = "instance_ufos/NotoSansAdlamUnjoined-Regular.ufo";
 }
 );
 interpolationWeight = 400;
+instanceInterpolations = {
+"E0DE3C87-4967-4D78-A749-2B5C9374D58B" = 1;
+};
 name = Regular;
-weightClass = Normal;
 },
 {
 customParameters = (
@@ -16301,12 +16118,50 @@ value = "instance_ufos/NotoSansAdlamUnjoined-Bold.ufo";
 }
 );
 interpolationWeight = 700;
+instanceInterpolations = {
+"8EB28FBC-9E0E-48FB-BF6B-CCA3D0470007" = 1;
+};
 isBold = 1;
 name = Bold;
 weightClass = Bold;
 }
 );
 kerning = {
+"E0DE3C87-4967-4D78-A749-2B5C9374D58B" = {
+"Bhe-adlam" = {
+"ha-adlam" = -30;
+};
+"Ha-adlam" = {
+"Ha-adlam" = -50;
+"ha-adlam" = -50;
+};
+"Kaf-adlam" = {
+"Ha-adlam" = -20;
+"ha-adlam" = -30;
+};
+"Laam-adlam" = {
+"ha-adlam" = -20;
+};
+"Miim-adlam" = {
+"ha-adlam" = -20;
+};
+"Qaaf-adlam" = {
+"Ha-adlam" = -20;
+};
+"Ya-adlam" = {
+"Ha-adlam" = -20;
+"ha-adlam" = -30;
+};
+"Yhe-adlam" = {
+"Ba-adlam" = -30;
+"Kha-adlam" = -40;
+"O-adlam" = -20;
+"Ra-adlam" = -20;
+};
+"ha-adlam" = {
+"yhe-adlam" = 20;
+};
+};
 "8EB28FBC-9E0E-48FB-BF6B-CCA3D0470007" = {
 "Bhe-adlam" = {
 "Ha-adlam" = -20;
@@ -16340,41 +16195,6 @@ kerning = {
 "Yhe-adlam" = {
 "Ba-adlam" = -30;
 "Kha-adlam" = -20;
-"O-adlam" = -20;
-"Ra-adlam" = -20;
-};
-"ha-adlam" = {
-"yhe-adlam" = 20;
-};
-};
-"E0DE3C87-4967-4D78-A749-2B5C9374D58B" = {
-"Bhe-adlam" = {
-"ha-adlam" = -30;
-};
-"Ha-adlam" = {
-"Ha-adlam" = -50;
-"ha-adlam" = -50;
-};
-"Kaf-adlam" = {
-"Ha-adlam" = -20;
-"ha-adlam" = -30;
-};
-"Laam-adlam" = {
-"ha-adlam" = -20;
-};
-"Miim-adlam" = {
-"ha-adlam" = -20;
-};
-"Qaaf-adlam" = {
-"Ha-adlam" = -20;
-};
-"Ya-adlam" = {
-"Ha-adlam" = -20;
-"ha-adlam" = -30;
-};
-"Yhe-adlam" = {
-"Ba-adlam" = -30;
-"Kha-adlam" = -40;
 "O-adlam" = -20;
 "Ra-adlam" = -20;
 };
