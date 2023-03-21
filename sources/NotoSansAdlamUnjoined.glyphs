@@ -1,5 +1,8 @@
 {
 .appVersion = "3180";
+DisplayStrings = (
+"/dottedCircle"
+);
 classes = (
 {
 code = "Alif-adlam Daali-adlam Daali-adlam Laam-adlam Miim-adlam Ba-adlam Sinnyiiyhe-adlam Pe-adlam Bhe-adlam Ra-adlam E-adlam Fa-adlam I-adlam O-adlam Dha-adlam Yhe-adlam Waw-adlam Nun-adlam Kaf-adlam Ya-adlam U-adlam Jiim-adlam Chi-adlam Ha-adlam Qaaf-adlam Ga-adlam Nya-adlam Tu-adlam Nha-adlam Va-adlam Kha-adlam Gbe-adlam Zal-adlam Kpo-adlam Sha-adlam";
@@ -14,7 +17,7 @@ code = "Alif-adlam Daali-adlam Laam-adlam Miim-adlam Ba-adlam Sinnyiiyhe-adlam P
 name = adlamChars;
 },
 {
-code = "Alif-adlam Daali-adlam Laam-adlam Miim-adlam Ba-adlam Sinnyiiyhe-adlam Pe-adlam Bhe-adlam Ra-adlam E-adlam Fa-adlam I-adlam O-adlam Dha-adlam Yhe-adlam Waw-adlam Nun-adlam Kaf-adlam Ya-adlam U-adlam Jiim-adlam Chi-adlam Ha-adlam Qaaf-adlam Ga-adlam Nya-adlam Tu-adlam Nha-adlam Va-adlam Kha-adlam Gbe-adlam Zal-adlam Kpo-adlam Sha-adlam alif-adlam daali-adlam laam-adlam miim-adlam ba-adlam sinnyiiyhe-adlam pe-adlam bhe-adlam ra-adlam e-adlam fa-adlam i-adlam o-adlam dha-adlam yhe-adlam waw-adlam nun-adlam kaf-adlam ya-adlam u-adlam jiim-adlam chi-adlam ha-adlam qaaf-adlam ga-adlam nya-adlam tu-adlam nha-adlam va-adlam kha-adlam gbe-adlam zal-adlam kpo-adlam sha-adlam daali-adlam.medi apostrophe-adlam";
+code = "Alif-adlam Daali-adlam Laam-adlam Miim-adlam Ba-adlam Sinnyiiyhe-adlam Pe-adlam Bhe-adlam Ra-adlam E-adlam Fa-adlam I-adlam O-adlam Dha-adlam Yhe-adlam Waw-adlam Nun-adlam Kaf-adlam Ya-adlam U-adlam Jiim-adlam Chi-adlam Ha-adlam Qaaf-adlam Ga-adlam Nya-adlam Tu-adlam Nha-adlam Va-adlam Kha-adlam Gbe-adlam Zal-adlam Kpo-adlam Sha-adlam alif-adlam daali-adlam laam-adlam miim-adlam ba-adlam sinnyiiyhe-adlam pe-adlam bhe-adlam ra-adlam e-adlam fa-adlam i-adlam o-adlam dha-adlam yhe-adlam waw-adlam nun-adlam kaf-adlam ya-adlam u-adlam jiim-adlam chi-adlam ha-adlam qaaf-adlam ga-adlam nya-adlam tu-adlam nha-adlam va-adlam kha-adlam gbe-adlam zal-adlam kpo-adlam sha-adlam daali-adlam.medi apostrophe-adlam\012dottedCircle";
 name = adlamLetters;
 },
 {
@@ -7433,15 +7436,15 @@ layers = (
 anchors = (
 {
 name = bottom;
-position = "{370, 0}";
+position = "{297, 0}";
 },
 {
 name = gemconsonanttop;
-position = "{377, 618}";
+position = "{303, 618}";
 },
 {
 name = top;
-position = "{385, 618}";
+position = "{304, 618}";
 },
 {
 name = topAlif;
@@ -7449,7 +7452,7 @@ position = "{220, 671}";
 },
 {
 name = "vowellengthencomb-adlam.case";
-position = "{428, 555}";
+position = "{322, 555}";
 }
 );
 layerId = "E0DE3C87-4967-4D78-A749-2B5C9374D58B";
@@ -7734,15 +7737,15 @@ width = 594;
 anchors = (
 {
 name = bottom;
-position = "{351, 0}";
+position = "{299, 0}";
 },
 {
 name = gemconsonanttop;
-position = "{354, 625}";
+position = "{294, 625}";
 },
 {
 name = top;
-position = "{364, 624}";
+position = "{292, 624}";
 },
 {
 name = topAlif;
@@ -7750,7 +7753,7 @@ position = "{216, 689}";
 },
 {
 name = "vowellengthencomb-adlam.case";
-position = "{398, 581}";
+position = "{297, 585}";
 }
 );
 layerId = "8EB28FBC-9E0E-48FB-BF6B-CCA3D0470007";
