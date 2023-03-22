@@ -1,0 +1,22 @@
+{
+    "tests": [
+        {
+            "input": "𞤲𞥋𞤣",
+            "expectation": "u1E923.fina=2+625|apostropheadlam.medi=1+142|u1E932.init=0+519",
+            "note": "#4",
+            "only": "NotoSansAdlam-Regular.ttf"
+        },
+        {
+            "expectation": "u1E94A=5@287,196+0|u1E909.fina=5+731|u1E945.case=2@305,177+0|u1E94A.below=2@291,-7+0|u1E909.medi=2+731|u1E945.case=0@305,177+0|u1E909.init=0+731",
+            "input": "𞤉𞥅𞤉𞥊𞥅𞤉𞥊",
+            "note": "#3",
+            "only": "NotoSansAdlam-Regular.ttf"
+        },
+        {
+            "expectation": "u1E94A=5@242,196+0|u1E909=5+711|u1E945.case=2@285,177+0|u1E94A.below=2@271,-7+0|u1E909=2+711|u1E945.case=0@285,177+0|u1E909=0+711",
+            "input": "𞤉𞥅𞤉𞥊𞥅𞤉𞥊",
+            "note": "#3",
+            "only": "NotoSansAdlamUnjoined-Regular.ttf"
+        }
+    ]
+}
