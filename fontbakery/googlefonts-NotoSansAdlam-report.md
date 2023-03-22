@@ -190,7 +190,7 @@ Width = 545:
 equal
 
 Width = 572:
-multiply, divide
+divide, multiply
 
 Width = 322:
 minus
@@ -252,7 +252,7 @@ The dot of soft dotted characters should disappear in other cases, for example: 
 </div></details><details><summary>⚠ <b>WARN:</b> Detect any interpolation issues in the font. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/interpolation_issues">com.google.fonts/check/interpolation_issues</a>)</summary><div>
 
 
-* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'equal': [0, 1] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe3be960dd0>, [1, 0] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7fe3be960b10>. [code: interpolation-issues]
+* ⚠ **WARN** Interpolation issues were found in the font: 	- Contour order differs in glyph 'equal': [0, 1] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f3c2524e490>, [1, 0] in <fontTools.ttLib.ttGlyphSet._TTGlyphSetGlyf object at 0x7f3c2524e790>. [code: interpolation-issues]
 </div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
 
 
@@ -266,7 +266,7 @@ Width = 545:
 equal
 
 Width = 572:
-multiply, divide
+divide, multiply
 
 Width = 322:
 minus
@@ -284,7 +284,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: mark-chars]
 
 | 💔 ERROR | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 3 | 10 | 21 | 327 | 20 | 313 | 0 |
+| 3 | 10 | 21 | 326 | 20 | 314 | 0 |
 | 0% | 1% | 3% | 47% | 3% | 45% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
