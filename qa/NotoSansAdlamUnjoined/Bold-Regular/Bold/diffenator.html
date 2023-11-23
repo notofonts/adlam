@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>GFR - Glyphs</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style type="text/css">
+    
+
+        html{
+	  font-family: sans-serif;
+	}
+    @font-face {
+        font-family: "Adobe NotDef";
+        src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+    }
+	.box-title{
+	  width: 100%;
+	  font-size: 8pt;
+	  font-weight: 700;
+	  border-top: 1px solid black;
+	  padding-top: 5px;
+	  margin-bottom: 10pt;
+	  display: block;
+	}
+	.box{
+	  margin-bottom: 20pt;
+	  width: 100%;
+	  float: left;
+	}
+	.box-text{
+	}
+	
+	#nav{
+	  position: fixed;
+	  right: 20px;
+	  z-index: 100;
+	}
+	#font-toggle{
+	}
+	.nav-item{
+		display: block;
+		cursor: pointer;
+		-webkit-user-select: none; /* Safari */        
+		-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+		user-select: none; /* Standard */
+		text-align: center;
+		color: white;
+		background-color: black;
+		display: block;
+		font-size: 9pt;
+		padding: 5px;
+		margin: 2px;
+	}
+	.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+	}
+
+	.tooltip .tooltiptext {
+	font-family: sans-serif;
+	visibility: hidden;
+	width: 500px;
+	background-color: black;
+	color: #fff;
+	text-align: left;
+	font-size: 12pt;
+	line-height: 15pt;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	}
+
+	.tooltip:hover .tooltiptext {
+	padding: 10px;
+	visibility: visible;
+	}
+	.tooltipleft {
+		float:left;
+		width: 249px;
+	}
+	.tooltipright {
+		float:right;
+		width:250px;
+	}
+
+			/* Stuff needed for the table differ */
+            body {
+                font-family: Helvetica;
+            }
+            .node {
+                font-family: courier;
+                cursor: pointer;
+                position: relative;
+                left: 30px;
+                padding: 5px;
+                display: block;
+                border: 1px dashed grey;
+            }
+            .header {
+            font-weight: bold;
+            }
+            .attrib-old{
+                color: red;
+                cursor: text;
+            }
+            .attrib-new{
+                color: green;
+                cursor: text;
+            }
+            .leaf {
+            font-weight: bold;
+            }
+            .old .cell .new {
+            	display:  none;
+            }
+            .new .cell .old {
+            	display:  none;
+            }
+            .both .cell .old {
+            	opacity: 0.75;
+            	color:  red;
+            }
+            .both .cell .new {
+            	opacity: 0.75;
+            	position: absolute;
+            	top: 0;
+            	color:  green;
+            }
+			.spacer {
+				display:block;
+				float:left;
+				width:100%;
+			}
+
+	  
+	    @font-face{
+    src: url(old-NotoSansAdlamUnjoined-Bold.ttf);
+    font-family: "old font";
+    font-weight: 700;
+    
+    font-style: normal;
+}
+	  
+
+	  
+	    @font-face{
+    src: url(new-NotoSansAdlamUnjoined-Bold.ttf);
+    font-family: "new font";
+    font-weight: 700;
+    
+    font-style: normal;
+}
+	  
+
+	  
+
+	  
+	    .old-wght-400{
+    font-family: "old font", "Adobe NotDef";
+    font-weight: 400;
+    
+    font-style: normal;
+    font-variation-settings: "wght" 400;
+}
+	  
+
+	  
+	    .new-wght-400{
+    font-family: "new font", "Adobe NotDef";
+    font-weight: 400;
+    
+    font-style: normal;
+    font-variation-settings: "wght" 400;
+}
+	  
+
+	  
+	
+.cell{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  width: 50pt;
+  line-height: 48.0px;
+}
+.cell-word{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  line-height: 48.0px;
+}
+.cat-strings .cell {
+  clear: both;
+  position: static;
+  float: none;
+  text-align: left;
+}
+.box-title {
+  clear: both;
+}
+
+
+	   #ot-panel {
+		max-height: 400px;
+		overflow-y: scroll;
+		background: white;
+		padding: 10px;
+		display: none;
+	   }
+    </style>
+</head>
+<body>
+    <div id="nav">
+		
+			<div class="nav-item" id="font-toggle">old</div>
+		
+			<div class="nav-item" id="ot-button">OT features</div>
+			<div id="ot-panel">
+			</div>
+		
+	</div>
+    <div id="content">
+	<h2>
+<b>Diffenator</b>
+</h2>
+	
+  
+    <div class="box">
+    <div class="box-title">Tables</div>
+     <script>var fontdiff = {"OS/2": {"xAvgCharWidth": [597, 600]}, "cmap": {"0x2044": ["fraction", null]}, "hhea": {"minLeftSideBearing": [-192, -40], "numberOfHMetrics": [155, 154]}, "GPOS": {"table": {"FeatureList": {"FeatureRecord": {"0": {"Feature": {"LookupListIndex": {"0": [0, 1], "1": [null, 2]}, "LookupCount": [1, 2]}}, "1": {"Feature": {"LookupListIndex": {"0": [1, 3]}}}, "2": {"FeatureTag": ["mark", "dist"], "Feature": {"LookupListIndex": {"0": [2, 0]}}}, "3": {"FeatureTag": [null, "mark"], "Feature": {"LookupCount": [null, 1], "LookupListIndex": {"0": [null, 4]}}}}, "FeatureCount": [3, 4]}, "ScriptList": {"ScriptCount": [1, 2], "ScriptRecord": {"0": {"Script": {"DefaultLangSys": {"FeatureIndex": {"2": [2, 3]}}}}, "1": {"ScriptTag": [null, "adlm"], "Script": {"DefaultLangSys": {"ReqFeatureIndex": [null, 65535], "FeatureCount": [null, 1], "FeatureIndex": {"0": [null, 2]}}, "LangSysCount": [null, 0]}}}}, "LookupList": {"Lookup": {"0": {"LookupType": [4, 2], "LookupFlag": [0, 8], "SubTable": {"0": {"MarkCoverage": {"glyphs": {"0": ["u1E944", null], "1": ["u1E944.case", null], "2": ["u1E948", null], "3": ["u1E949", null], "4": ["u1E946", null], "5": ["u1E946.case", null], "6": ["u1E947", null], "7": ["u1E94A", null], "8": ["u1E945", null], "9": ["u1E945.case", null]}}, "Coverage": {"glyphs": {"0": [null, "u1E907"], "1": [null, "u1E915"], "2": [null, "u1E918"], "3": [null, "u1E916"], "4": [null, "u1E911"], "5": [null, "u1E902"], "6": [null, "u1E903"], "7": [null, "u1E917"], "8": [null, "u1E912"], "9": [null, "u1E90E"], "10": [null, "u1E938"]}}, "BaseArray": {"BaseCount": [69, null], "BaseRecord": {"0": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [335, null], "YCoordinate": [739, null]}, "1": {"Format": [1, null], "XCoordinate": [381, null], "YCoordinate": [663, null]}, "2": {"Format": [1, null], "XCoordinate": [395, null], "YCoordinate": [663, null]}}}, "1": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [406, null], "YCoordinate": [663, null]}}}, "2": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [355, null], "YCoordinate": [663, null]}}}, "3": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [382, null], "YCoordinate": [663, null]}}}, "4": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [305, null], "YCoordinate": [663, null]}, "2": {"Format": [1, null], "XCoordinate": [309, null], "YCoordinate": [663, null]}}}, "5": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [372, null], "YCoordinate": [663, null]}}}, "6": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [388, null], "YCoordinate": [666, null]}, "3": {"Format": [1, null], "XCoordinate": [409, null], "YCoordinate": [602, null]}}}, "7": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [354, null], "YCoordinate": [663, null]}}}, "8": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [327, null], "YCoordinate": [663, null]}, "2": {"Format": [1, null], "XCoordinate": [340, null], "YCoordinate": [663, null]}}}, "9": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [357, null], "YCoordinate": [663, null]}}}, "10": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [336, null], "YCoordinate": [663, null]}, "2": {"Format": [1, null], "XCoordinate": [332, null], "YCoordinate": [663, null]}}}, "11": {"BaseAnchor": {"3": {"Format": [1, null], "XCoordinate": [460, null], "YCoordinate": [557, null]}}}, "12": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [493, null], "YCoordinate": [665, null]}, "2": {"Format": [1, null], "XCoordinate": [484, null], "YCoordinate": [665, null]}}}, "13": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [353, null], "YCoordinate": [663, null]}}}, "14": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [421, null], "YCoordinate": [663, null]}}}, "15": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [359, null], "YCoordinate": [663, null]}}}, "16": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [413, null], "YCoordinate": [663, null]}}}, "17": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [337, null], "YCoordinate": [663, null]}}}, "18": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [424, null], "YCoordinate": [663, null]}}}, "19": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [359, null], "YCoordinate": [663, null]}}}, "20": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [374, null], "YCoordinate": [663, null]}}}, "21": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [379, null], "YCoordinate": [663, null]}, "3": {"Format": [1, null], "XCoordinate": [414, null], "YCoordinate": [587, null]}}}, "22": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [328, null], "YCoordinate": [663, null]}}}, "23": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [443, null], "YCoordinate": [666, null]}}}, "24": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [370, null], "YCoordinate": [663, null]}}}, "25": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [450, null], "YCoordinate": [663, null]}}}, "26": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [454, null], "YCoordinate": [663, null]}, "2": {"Format": [1, null], "XCoordinate": [464, null], "YCoordinate": [663, null]}}}, "27": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [471, null], "YCoordinate": [666, null]}, "2": {"Format": [1, null], "XCoordinate": [457, null], "YCoordinate": [666, null]}}}, "28": {"BaseAnchor": {"3": {"Format": [1, null], "XCoordinate": [469, null], "YCoordinate": [578, null]}}}, "29": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [345, null], "YCoordinate": [663, null]}}}, "30": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [356, null], "YCoordinate": [663, null]}}}, "31": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [261, null], "YCoordinate": [663, null]}}}, "32": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [339, null], "YCoordinate": [666, null]}}}, "33": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [450, null], "YCoordinate": [663, null]}}}, "34": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [104, null], "YCoordinate": [638, null]}, "1": {"Format": [1, null], "XCoordinate": [352, null], "YCoordinate": [585, null]}, "2": {"Format": [1, null], "XCoordinate": [338, null], "YCoordinate": [585, null]}}}, "35": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [434, null], "YCoordinate": [633, null]}}}, "36": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [280, null], "YCoordinate": [591, null]}}}, "37": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [383, null], "YCoordinate": [575, null]}}}, "38": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [284, null], "YCoordinate": [631, null]}, "2": {"Format": [1, null], "XCoordinate": [269, null], "YCoordinate": [631, null]}}}, "39": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [297, null], "YCoordinate": [585, null]}, "2": {"Format": [1, null], "XCoordinate": [279, null], "YCoordinate": [585, null]}}}, "40": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [349, null], "YCoordinate": [636, null]}}}, "41": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [333, null], "YCoordinate": [565, null]}}}, "42": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [331, null], "YCoordinate": [575, null]}}}, "43": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [293, null], "YCoordinate": [640, null]}, "2": {"Format": [1, null], "XCoordinate": [296, null], "YCoordinate": [625, null]}}}, "44": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [287, null], "YCoordinate": [591, null]}}}, "45": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [244, null], "YCoordinate": [575, null]}, "2": {"Format": [1, null], "XCoordinate": [261, null], "YCoordinate": [575, null]}}}, "46": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [377, null], "YCoordinate": [607, null]}}}, "47": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [420, null], "YCoordinate": [575, null]}, "2": {"Format": [1, null], "XCoordinate": [418, null], "YCoordinate": [575, null]}}}, "48": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [307, null], "YCoordinate": [575, null]}}}, "49": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [361, null], "YCoordinate": [575, null]}}}, "50": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [353, null], "YCoordinate": [575, null]}}}, "51": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [296, null], "YCoordinate": [575, null]}}}, "52": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [307, null], "YCoordinate": [575, null]}}}, "53": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [359, null], "YCoordinate": [575, null]}}}, "54": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [284, null], "YCoordinate": [575, null]}}}, "55": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [334, null], "YCoordinate": [575, null]}}}, "56": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [357, null], "YCoordinate": [575, null]}}}, "57": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [295, null], "YCoordinate": [575, null]}}}, "58": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [365, null], "YCoordinate": [620, null]}}}, "59": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [342, null], "YCoordinate": [640, null]}}}, "60": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [417, null], "YCoordinate": [600, null]}}}, "61": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [438, null], "YCoordinate": [575, null]}, "2": {"Format": [1, null], "XCoordinate": [442, null], "YCoordinate": [575, null]}}}, "62": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [413, null], "YCoordinate": [575, null]}, "2": {"Format": [1, null], "XCoordinate": [400, null], "YCoordinate": [575, null]}}}, "63": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [380, null], "YCoordinate": [575, null]}}}, "64": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [304, null], "YCoordinate": [575, null]}}}, "65": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [296, null], "YCoordinate": [575, null]}}}, "66": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [243, null], "YCoordinate": [575, null]}}}, "67": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [325, null], "YCoordinate": [575, null]}}}, "68": {"BaseAnchor": {"1": {"Format": [1, null], "XCoordinate": [396, null], "YCoordinate": [575, null]}}}}}, "BaseCoverage": {"glyphs": {"0": ["u1E900", null], "1": ["u1E904", null], "2": ["u1E907", null], "3": ["u1E915", null], "4": ["u1E901", null], "5": ["u1E90D", null], "6": ["u1E909", null], "7": ["u1E90A", null], "8": ["u1E918", null], "9": ["u1E91E", null], "10": ["u1E916", null], "11": ["u1E90B", null], "12": ["u1E914", null], "13": ["u1E911", null], "14": ["u1E91D", null], "15": ["u1E920", null], "16": ["u1E902", null], "17": ["u1E903", null], "18": ["u1E91B", null], "19": ["u1E910", null], "20": ["u1E919", null], "21": ["u1E90C", null], "22": ["u1E906", null], "23": ["u1E917", null], "24": ["u1E908", null], "25": ["u1E921", null], "26": ["u1E905", null], "27": ["u1E91A", null], "28": ["u1E913", null], "29": ["u1E91C", null], "30": ["u1E90F", null], "31": ["u1E912", null], "32": ["u1E90E", null], "33": ["u1E91F", null], "34": ["u1E922", null], "35": ["u1E926", null], "36": ["u1E929", null], "37": ["u1E937", null], "38": ["u1E923", null], "39": ["u1E923.medi", null], "40": ["u1E92F", null], "41": ["u1E92B", null], "42": ["u1E92C", null], "43": ["u1E93A", null], "44": ["u1E940", null], "45": ["u1E938", null], "46": ["u1E92D", null], "47": ["u1E936", null], "48": ["u1E933", null], "49": ["u1E93F", null], "50": ["u1E942", null], "51": ["u1E924", null], "52": ["u1E925", null], "53": ["u1E93D", null], "54": ["u1E932", null], "55": ["u1E93B", null], "56": ["u1E92E", null], "57": ["u1E928", null], "58": ["u1E939", null], "59": ["u1E92A", null], "60": ["u1E943", null], "61": ["u1E927", null], "62": ["u1E93C", null], "63": ["u1E935", null], "64": ["u1E93E", null], "65": ["u1E931", null], "66": ["u1E934", null], "67": ["u1E930", null], "68": ["u1E941", null]}}, "MarkArray": {"MarkCount": [10, null], "MarkRecord": {"0": {"Class": [0, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [50, null], "YCoordinate": [610, null]}}, "1": {"Class": [0, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [260, null], "YCoordinate": [744, null]}}, "2": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [212, null], "YCoordinate": [470, null]}}, "3": {"Class": [2, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [294, null], "YCoordinate": [470, null]}}, "4": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [242, null], "YCoordinate": [460, null]}}, "5": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [292, null], "YCoordinate": [638, null]}}, "6": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [238, null], "YCoordinate": [460, null]}}, "7": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [106, null], "YCoordinate": [470, null]}}, "8": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [231, null], "YCoordinate": [460, null]}}, "9": {"Class": [3, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [147, null], "YCoordinate": [380, null]}}}}, "ValueFormat1": [null, 5], "PairSetCount": [null, 11], "ClassCount": [4, null], "ValueFormat2": [null, 0], "PairSet": {"0": {"PairValueCount": [null, 2], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E916"], "Value1": {"XPlacement": [null, -20], "XAdvance": [null, -20]}}, "1": {"SecondGlyph": [null, "u1E938"], "Value1": {"XPlacement": [null, -30], "XAdvance": [null, -30]}}}}, "1": {"PairValueCount": [null, 1], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E916"], "Value1": {"XPlacement": [null, -20], "XAdvance": [null, -20]}}}}, "2": {"PairValueCount": [null, 1], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E916"], "Value1": {"XPlacement": [null, -10], "XAdvance": [null, -10]}}}}, "3": {"PairValueCount": [null, 2], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E916"], "Value1": {"XPlacement": [null, -40], "XAdvance": [null, -40]}}, "1": {"SecondGlyph": [null, "u1E938"], "Value1": {"XPlacement": [null, -50], "XAdvance": [null, -50]}}}}, "4": {"PairValueCount": [null, 1], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E938"], "Value1": {"XPlacement": [null, -20], "XAdvance": [null, -20]}}}}, "5": {"PairValueCount": [null, 1], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E938"], "Value1": {"XPlacement": [null, -30], "XAdvance": [null, -30]}}}}, "6": {"PairValueCount": [null, 1], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E938"], "Value1": {"XPlacement": [null, -30], "XAdvance": [null, -30]}}}}, "7": {"PairValueCount": [null, 1], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E916"], "Value1": {"XPlacement": [null, -20], "XAdvance": [null, -20]}}}}, "8": {"PairValueCount": [null, 1], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E938"], "Value1": {"XPlacement": [null, -30], "XAdvance": [null, -30]}}}}, "9": {"PairValueCount": [null, 4], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E904"], "Value1": {"XPlacement": [null, -30], "XAdvance": [null, -30]}}, "1": {"SecondGlyph": [null, "u1E91D"], "Value1": {"XPlacement": [null, -20], "XAdvance": [null, -20]}}, "2": {"SecondGlyph": [null, "u1E90C"], "Value1": {"XPlacement": [null, -20], "XAdvance": [null, -20]}}, "3": {"SecondGlyph": [null, "u1E908"], "Value1": {"XPlacement": [null, -20], "XAdvance": [null, -20]}}}}, "10": {"PairValueCount": [null, 1], "PairValueRecord": {"0": {"SecondGlyph": [null, "u1E930"], "Value1": {"XPlacement": [null, 20], "XAdvance": [null, 20]}}}}}}}}, "1": {"SubTable": {"0": {"MarkCoverage": {"glyphs": {"0": ["u1E94A.below", "u1E944"], "1": [null, "u1E944.case"], "2": [null, "u1E948"], "3": [null, "u1E949"], "4": [null, "u1E946"], "5": [null, "u1E946.case"], "6": [null, "u1E947"], "7": [null, "u1E94A"], "8": [null, "u1E945"], "9": [null, "u1E945.case"]}}, "BaseArray": {"BaseRecord": {"0": {"BaseAnchor": {"0": {"XCoordinate": [388, 335], "YCoordinate": [0, 739]}, "1": {"Format": [null, 1], "XCoordinate": [null, 381], "YCoordinate": [null, 663]}, "2": {"Format": [null, 1], "XCoordinate": [null, 395], "YCoordinate": [null, 663]}}}, "1": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [438, null], "YCoordinate": [0, null]}, "1": {"Format": [null, 1], "XCoordinate": [null, 406], "YCoordinate": [null, 663]}}}, "2": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [364, null], "YCoordinate": [0, null]}, "1": {"Format": [null, 1], "XCoordinate": [null, 355], "YCoordinate": [null, 663]}}}, "3": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [454, null], "YCoordinate": [0, null]}, "1": {"Format": [null, 1], "XCoordinate": [null, 382], "YCoordinate": [null, 663]}}}, "4": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [285, null], "YCoordinate": [0, null]}, "1": {"Format": [null, 1], "XCoordinate": [null, 305], "YCoordinate": [null, 663]}, "2": {"Format": [null, 1], "XCoordinate": [null, 309], "YCoordinate": [null, 663]}}}, "5": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [414, null], "YCoordinate": [0, null]}, "1": {"Format": [null, 1], "XCoordinate": [null, 372], "YCoordinate": [null, 663]}}}, "6": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [356, null], "YCoordinate": [0, null]}, "1": {"Format": [null, 1], "XCoordinate": [null, 388], "YCoordinate": [null, 666]}, "3": {"Format": [null, 1], "XCoordinate": [null, 409], "YCoordinate": [null, 602]}}}, "7": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [417, null], "YCoordinate": [0, null]}, "1": {"Format": [null, 1], "XCoordinate": [null, 354], "YCoordinate": [null, 663]}}}, "8": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [440, null], "YCoordinate": [2, null]}, "1": {"Format": [null, 1], "XCoordinate": [null, 327], "YCoordinate": [null, 663]}, "2": {"Format": [null, 1], "XCoordinate": [null, 340], "YCoordinate": [null, 663]}}}, "9": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 357], "YCoordinate": [null, 663]}}}, "10": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 336], "YCoordinate": [null, 663]}, "2": {"Format": [null, 1], "XCoordinate": [null, 332], "YCoordinate": [null, 663]}}}, "11": {"BaseAnchor": {"3": {"Format": [null, 1], "XCoordinate": [null, 460], "YCoordinate": [null, 557]}}}, "12": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 493], "YCoordinate": [null, 665]}, "2": {"Format": [null, 1], "XCoordinate": [null, 484], "YCoordinate": [null, 665]}}}, "13": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 353], "YCoordinate": [null, 663]}}}, "14": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 421], "YCoordinate": [null, 663]}}}, "15": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 359], "YCoordinate": [null, 663]}}}, "16": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 413], "YCoordinate": [null, 663]}}}, "17": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 337], "YCoordinate": [null, 663]}}}, "18": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 424], "YCoordinate": [null, 663]}}}, "19": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 359], "YCoordinate": [null, 663]}}}, "20": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 374], "YCoordinate": [null, 663]}}}, "21": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 379], "YCoordinate": [null, 663]}, "3": {"Format": [null, 1], "XCoordinate": [null, 414], "YCoordinate": [null, 587]}}}, "22": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 328], "YCoordinate": [null, 663]}}}, "23": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 443], "YCoordinate": [null, 666]}}}, "24": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 370], "YCoordinate": [null, 663]}}}, "25": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 450], "YCoordinate": [null, 663]}}}, "26": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 454], "YCoordinate": [null, 663]}, "2": {"Format": [null, 1], "XCoordinate": [null, 464], "YCoordinate": [null, 663]}}}, "27": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 471], "YCoordinate": [null, 666]}, "2": {"Format": [null, 1], "XCoordinate": [null, 457], "YCoordinate": [null, 666]}}}, "28": {"BaseAnchor": {"3": {"Format": [null, 1], "XCoordinate": [null, 469], "YCoordinate": [null, 578]}}}, "29": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 345], "YCoordinate": [null, 663]}}}, "30": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 356], "YCoordinate": [null, 663]}}}, "31": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 261], "YCoordinate": [null, 663]}}}, "32": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 339], "YCoordinate": [null, 666]}}}, "33": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 450], "YCoordinate": [null, 663]}}}, "34": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 104], "YCoordinate": [null, 638]}, "1": {"Format": [null, 1], "XCoordinate": [null, 352], "YCoordinate": [null, 585]}, "2": {"Format": [null, 1], "XCoordinate": [null, 338], "YCoordinate": [null, 585]}}}, "35": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 434], "YCoordinate": [null, 633]}}}, "36": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 280], "YCoordinate": [null, 591]}}}, "37": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 383], "YCoordinate": [null, 575]}}}, "38": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 284], "YCoordinate": [null, 631]}, "2": {"Format": [null, 1], "XCoordinate": [null, 269], "YCoordinate": [null, 631]}}}, "39": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 297], "YCoordinate": [null, 585]}, "2": {"Format": [null, 1], "XCoordinate": [null, 279], "YCoordinate": [null, 585]}}}, "40": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 349], "YCoordinate": [null, 636]}}}, "41": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 333], "YCoordinate": [null, 565]}}}, "42": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 331], "YCoordinate": [null, 575]}}}, "43": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 293], "YCoordinate": [null, 640]}, "2": {"Format": [null, 1], "XCoordinate": [null, 296], "YCoordinate": [null, 625]}}}, "44": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 287], "YCoordinate": [null, 591]}}}, "45": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 244], "YCoordinate": [null, 575]}, "2": {"Format": [null, 1], "XCoordinate": [null, 261], "YCoordinate": [null, 575]}}}, "46": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 377], "YCoordinate": [null, 607]}}}, "47": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 420], "YCoordinate": [null, 575]}, "2": {"Format": [null, 1], "XCoordinate": [null, 418], "YCoordinate": [null, 575]}}}, "48": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 307], "YCoordinate": [null, 575]}}}, "49": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 361], "YCoordinate": [null, 575]}}}, "50": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 353], "YCoordinate": [null, 575]}}}, "51": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 296], "YCoordinate": [null, 575]}}}, "52": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 307], "YCoordinate": [null, 575]}}}, "53": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 359], "YCoordinate": [null, 575]}}}, "54": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 284], "YCoordinate": [null, 575]}}}, "55": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 334], "YCoordinate": [null, 575]}}}, "56": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 357], "YCoordinate": [null, 575]}}}, "57": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 295], "YCoordinate": [null, 575]}}}, "58": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 365], "YCoordinate": [null, 620]}}}, "59": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 342], "YCoordinate": [null, 640]}}}, "60": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 417], "YCoordinate": [null, 600]}}}, "61": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 438], "YCoordinate": [null, 575]}, "2": {"Format": [null, 1], "XCoordinate": [null, 442], "YCoordinate": [null, 575]}}}, "62": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 413], "YCoordinate": [null, 575]}, "2": {"Format": [null, 1], "XCoordinate": [null, 400], "YCoordinate": [null, 575]}}}, "63": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 380], "YCoordinate": [null, 575]}}}, "64": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 304], "YCoordinate": [null, 575]}}}, "65": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 296], "YCoordinate": [null, 575]}}}, "66": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 243], "YCoordinate": [null, 575]}}}, "67": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 325], "YCoordinate": [null, 575]}}}, "68": {"BaseAnchor": {"1": {"Format": [null, 1], "XCoordinate": [null, 396], "YCoordinate": [null, 575]}}}}, "BaseCount": [9, 69]}, "BaseCoverage": {"glyphs": {"0": ["u1E909", "u1E900"], "1": ["u1E914", "u1E904"], "2": ["u1E90C", "u1E907"], "3": ["u1E905", "u1E915"], "4": ["u1E92B", "u1E901"], "5": ["u1E936", "u1E90D"], "6": ["u1E92E", "u1E909"], "7": ["u1E943", "u1E90A"], "8": ["u1E927", "u1E918"], "9": [null, "u1E91E"], "10": [null, "u1E916"], "11": [null, "u1E90B"], "12": [null, "u1E914"], "13": [null, "u1E911"], "14": [null, "u1E91D"], "15": [null, "u1E920"], "16": [null, "u1E902"], "17": [null, "u1E903"], "18": [null, "u1E91B"], "19": [null, "u1E910"], "20": [null, "u1E919"], "21": [null, "u1E90C"], "22": [null, "u1E906"], "23": [null, "u1E917"], "24": [null, "u1E908"], "25": [null, "u1E921"], "26": [null, "u1E905"], "27": [null, "u1E91A"], "28": [null, "u1E913"], "29": [null, "u1E91C"], "30": [null, "u1E90F"], "31": [null, "u1E912"], "32": [null, "u1E90E"], "33": [null, "u1E91F"], "34": [null, "u1E922"], "35": [null, "u1E926"], "36": [null, "u1E929"], "37": [null, "u1E937"], "38": [null, "u1E923"], "39": [null, "u1E923.medi"], "40": [null, "u1E92F"], "41": [null, "u1E92B"], "42": [null, "u1E92C"], "43": [null, "u1E93A"], "44": [null, "u1E940"], "45": [null, "u1E938"], "46": [null, "u1E92D"], "47": [null, "u1E936"], "48": [null, "u1E933"], "49": [null, "u1E93F"], "50": [null, "u1E942"], "51": [null, "u1E924"], "52": [null, "u1E925"], "53": [null, "u1E93D"], "54": [null, "u1E932"], "55": [null, "u1E93B"], "56": [null, "u1E92E"], "57": [null, "u1E928"], "58": [null, "u1E939"], "59": [null, "u1E92A"], "60": [null, "u1E943"], "61": [null, "u1E927"], "62": [null, "u1E93C"], "63": [null, "u1E935"], "64": [null, "u1E93E"], "65": [null, "u1E931"], "66": [null, "u1E934"], "67": [null, "u1E930"], "68": [null, "u1E941"]}}, "MarkArray": {"MarkRecord": {"0": {"MarkAnchor": {"XCoordinate": [106, 50], "YCoordinate": [7, 610]}}, "1": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 260], "YCoordinate": [null, 744]}}, "2": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 212], "YCoordinate": [null, 470]}}, "3": {"Class": [null, 2], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 294], "YCoordinate": [null, 470]}}, "4": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 242], "YCoordinate": [null, 460]}}, "5": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 292], "YCoordinate": [null, 638]}}, "6": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 238], "YCoordinate": [null, 460]}}, "7": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 106], "YCoordinate": [null, 470]}}, "8": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 231], "YCoordinate": [null, 460]}}, "9": {"Class": [null, 3], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 147], "YCoordinate": [null, 380]}}}, "MarkCount": [1, 10]}, "ClassCount": [1, 4]}}}, "2": {"MarkFilteringSet": [null, 0], "LookupType": [4, 6], "LookupFlag": [0, 16], "SubTable": {"0": {"MarkCoverage": {"glyphs": {"0": ["u1E944", null], "1": ["u1E944.case", null], "2": ["u1E948", null], "3": ["u1E949", null], "4": ["u1E946", null], "5": ["u1E946.case", null], "6": ["u1E947", null], "7": ["u1E94A", null], "8": ["u1E94A.below", null], "9": ["u1E945", null], "10": ["u1E945.case", null]}}, "Mark1Array": {"MarkCount": [null, 6], "MarkRecord": {"0": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 212], "YCoordinate": [null, 470]}}, "1": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 242], "YCoordinate": [null, 460]}}, "2": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 292], "YCoordinate": [null, 638]}}, "3": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 238], "YCoordinate": [null, 460]}}, "4": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 106], "YCoordinate": [null, 470]}}, "5": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 231], "YCoordinate": [null, 460]}}}}, "Mark2Coverage": {"glyphs": {"0": [null, "u1E948"], "1": [null, "u1E949"]}}, "BaseArray": {"BaseCount": [1, null], "BaseRecord": {"0": {"BaseAnchor": {"0": {"Format": [1, null], "XCoordinate": [216, null], "YCoordinate": [689, null]}, "1": {"Format": [1, null], "XCoordinate": [364, null], "YCoordinate": [624, null]}, "2": {"Format": [1, null], "XCoordinate": [354, null], "YCoordinate": [625, null]}, "3": {"Format": [1, null], "XCoordinate": [351, null], "YCoordinate": [0, null]}, "4": {"Format": [1, null], "XCoordinate": [398, null], "YCoordinate": [581, null]}}}}}, "Mark1Coverage": {"glyphs": {"0": [null, "u1E948"], "1": [null, "u1E946"], "2": [null, "u1E946.case"], "3": [null, "u1E947"], "4": [null, "u1E94A"], "5": [null, "u1E945"]}}, "BaseCoverage": {"glyphs": {"0": ["uni25CC", null]}}, "MarkArray": {"MarkCount": [11, null], "MarkRecord": {"0": {"Class": [0, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [50, null], "YCoordinate": [610, null]}}, "1": {"Class": [0, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [260, null], "YCoordinate": [744, null]}}, "2": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [212, null], "YCoordinate": [470, null]}}, "3": {"Class": [2, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [294, null], "YCoordinate": [470, null]}}, "4": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [242, null], "YCoordinate": [460, null]}}, "5": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [292, null], "YCoordinate": [638, null]}}, "6": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [238, null], "YCoordinate": [460, null]}}, "7": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [106, null], "YCoordinate": [470, null]}}, "8": {"Class": [3, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [106, null], "YCoordinate": [7, null]}}, "9": {"Class": [1, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [231, null], "YCoordinate": [460, null]}}, "10": {"Class": [4, null], "MarkAnchor": {"Format": [1, null], "XCoordinate": [147, null], "YCoordinate": [380, null]}}}}, "Mark2Array": {"Mark2Count": [null, 2], "Mark2Record": {"0": {"Mark2Anchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 213], "YCoordinate": [null, 806]}}}, "1": {"Mark2Anchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 303], "YCoordinate": [null, 806]}}}}}, "ClassCount": [5, 1]}}}, "3": {"LookupType": [null, 4], "LookupFlag": [null, 0], "SubTableCount": [null, 1], "SubTable": {"0": {"Format": [null, 1], "MarkCoverage": {"glyphs": {"0": [null, "u1E94A.below"]}}, "BaseCoverage": {"glyphs": {"0": [null, "u1E909"], "1": [null, "u1E914"], "2": [null, "u1E90C"], "3": [null, "u1E905"], "4": [null, "u1E92B"], "5": [null, "u1E936"], "6": [null, "u1E92E"], "7": [null, "u1E943"], "8": [null, "u1E927"]}}, "ClassCount": [null, 1], "MarkArray": {"MarkCount": [null, 1], "MarkRecord": {"0": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 106], "YCoordinate": [null, 7]}}}}, "BaseArray": {"BaseCount": [null, 9], "BaseRecord": {"0": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 388], "YCoordinate": [null, 0]}}}, "1": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 438], "YCoordinate": [null, 0]}}}, "2": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 364], "YCoordinate": [null, 0]}}}, "3": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 454], "YCoordinate": [null, 0]}}}, "4": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 285], "YCoordinate": [null, 0]}}}, "5": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 414], "YCoordinate": [null, 0]}}}, "6": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 356], "YCoordinate": [null, 0]}}}, "7": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 417], "YCoordinate": [null, 0]}}}, "8": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 440], "YCoordinate": [null, 2]}}}}}}}}, "4": {"LookupType": [null, 4], "LookupFlag": [null, 0], "SubTableCount": [null, 1], "SubTable": {"0": {"Format": [null, 1], "MarkCoverage": {"glyphs": {"0": [null, "u1E944"], "1": [null, "u1E944.case"], "2": [null, "u1E948"], "3": [null, "u1E949"], "4": [null, "u1E946"], "5": [null, "u1E946.case"], "6": [null, "u1E947"], "7": [null, "u1E94A"], "8": [null, "u1E94A.below"], "9": [null, "u1E945"], "10": [null, "u1E945.case"]}}, "BaseCoverage": {"glyphs": {"0": [null, "uni25CC"]}}, "ClassCount": [null, 5], "MarkArray": {"MarkCount": [null, 11], "MarkRecord": {"0": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 50], "YCoordinate": [null, 610]}}, "1": {"Class": [null, 0], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 260], "YCoordinate": [null, 744]}}, "2": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 212], "YCoordinate": [null, 470]}}, "3": {"Class": [null, 2], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 294], "YCoordinate": [null, 470]}}, "4": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 242], "YCoordinate": [null, 460]}}, "5": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 292], "YCoordinate": [null, 638]}}, "6": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 238], "YCoordinate": [null, 460]}}, "7": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 106], "YCoordinate": [null, 470]}}, "8": {"Class": [null, 3], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 106], "YCoordinate": [null, 7]}}, "9": {"Class": [null, 1], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 231], "YCoordinate": [null, 460]}}, "10": {"Class": [null, 4], "MarkAnchor": {"Format": [null, 1], "XCoordinate": [null, 147], "YCoordinate": [null, 380]}}}}, "BaseArray": {"BaseCount": [null, 1], "BaseRecord": {"0": {"BaseAnchor": {"0": {"Format": [null, 1], "XCoordinate": [null, 216], "YCoordinate": [null, 689]}, "1": {"Format": [null, 1], "XCoordinate": [null, 292], "YCoordinate": [null, 624]}, "2": {"Format": [null, 1], "XCoordinate": [null, 294], "YCoordinate": [null, 625]}, "3": {"Format": [null, 1], "XCoordinate": [null, 299], "YCoordinate": [null, 0]}, "4": {"Format": [null, 1], "XCoordinate": [null, 297], "YCoordinate": [null, 585]}}}}}}}}}, "LookupCount": [3, 5]}}}, "hmtx": {"metrics": {"fraction": {"0": [130, null], "1": [-192, null]}}}, "glyf": {"glyphOrder": {"78": ["fraction", "u1E93A"], "79": ["u1E93A", "u1E940"], "80": ["u1E940", "u1E949"], "81": ["u1E949", "u1E946"], "82": ["u1E946", "u1E946.case"], "83": ["u1E946.case", "greater"], "84": ["greater", "guillemotleft"], "85": ["guillemotleft", "guillemotright"], "86": ["guillemotright", "guilsinglleft"], "87": ["guilsinglleft", "guilsinglright"], "88": ["guilsinglright", "u1E938"], "89": ["u1E938", "u1E947"], "90": ["u1E947", "u1E94A"], "91": ["u1E94A", "u1E94A.below"], "92": ["u1E94A.below", "hyphen"], "93": ["hyphen", "u1E92D"], "94": ["u1E92D", "u1E936"], "95": ["u1E936", "u1E933"], "96": ["u1E933", "uni0640"], "97": ["uni0640", "u1E93F"], "98": ["u1E93F", "u1E942"], "99": ["u1E942", "u1E924"], "100": ["u1E924", "uni2E28"], "101": ["uni2E28", "less"], "102": ["less", "u1E925"], "103": ["u1E925", "uni00A0"], "104": ["uni00A0", "u1E93D"], "105": ["u1E93D", "u1E959"], "106": ["u1E959", "numbersign"], "107": ["numbersign", "u1E932"], "108": ["u1E932", "u1E93B"], "109": ["u1E93B", "u1E92E"], "110": ["u1E92E", "u1E951"], "111": ["u1E951", "parenleft"], "112": ["parenleft", "parenright"], "113": ["parenright", "u1E928"], "114": ["u1E928", "percent"], "115": ["percent", "period"], "116": ["period", "perthousand"], "117": ["perthousand", "plus"], "118": ["plus", "u1E939"], "119": ["u1E939", "question"], "120": ["question", "u1E95F"], "121": ["u1E95F", "uni061F"], "122": ["uni061F", "quotedbl"], "123": ["quotedbl", "quotedblbase"], "124": ["quotedblbase", "quotedblleft"], "125": ["quotedblleft", "quotedblright"], "126": ["quotedblright", "quoteleft"], "127": ["quoteleft", "quotereversed"], "128": ["quotereversed", "quoteright"], "129": ["quoteright", "quotesinglbase"], "130": ["quotesinglbase", "quotesingle"], "131": ["quotesingle", "u1E92A"], "132": ["u1E92A", "uni204F"], "133": ["uni204F", "uni2E29"], "134": ["uni2E29", "semicolon"], "135": ["semicolon", "u1E957"], "136": ["u1E957", "u1E943"], "137": ["u1E943", "u1E927"], "138": ["u1E927", "u1E956"], "139": ["u1E956", "slash"], "140": ["slash", "space"], "141": ["space", "u1E953"], "142": ["u1E953", "u1E93C"], "143": ["u1E93C", "u1E952"], "144": ["u1E952", "u1E935"], "145": ["u1E935", "underscore"], "146": ["underscore", "u1E93E"], "147": ["u1E93E", "u1E945"], "148": ["u1E945", "u1E945.case"], "149": ["u1E945.case", "u1E931"], "150": ["u1E931", "u1E934"], "151": ["u1E934", "u1E930"], "152": ["u1E930", "u1E941"], "153": ["u1E941", "u1E950"], "154": ["u1E950", null]}}, "head": {"modified": [3740571937, 3783590749], "checkSumAdjustment": [3313583638, 2721981057], "xMin": [-192, -40]}, "GDEF": {"table": {"MarkGlyphSetsDef": {"MarkSetTableFormat": [null, 1], "MarkSetCount": [null, 1], "Coverage": {"0": {"glyphs": {"0": [null, "u1E948"], "1": [null, "u1E949"], "2": [null, "u1E946"], "3": [null, "u1E946.case"], "4": [null, "u1E947"], "5": [null, "u1E94A"], "6": [null, "u1E945"]}}}}, "Version": [65536, 65538]}}, "vhea": {"tableTag": [null, "vhea"], "tableVersion": [null, 69632], "ascent": [null, 500], "descent": [null, -500], "lineGap": [null, 1000], "advanceHeightMax": [null, 0], "minTopSideBearing": [null, 0], "minBottomSideBearing": [null, -1349], "yMaxExtent": [null, 1349], "caretSlopeRise": [null, 0], "caretSlopeRun": [null, 1], "caretOffset": [null, 0], "reserved1": [null, 0], "reserved2": [null, 0], "reserved3": [null, 0], "reserved4": [null, 0], "metricDataFormat": [null, 0], "numberOfVMetrics": [null, 1]}, "maxp": {"numGlyphs": [155, 154]}, "GSUB": {"table": {"FeatureList": {"FeatureRecord": {"0": {"Feature": {"LookupListIndex": {"1": [1, null]}, "LookupCount": [2, 1]}}, "1": {"Feature": {"LookupListIndex": {"0": [8, 6]}}}, "2": {"Feature": {"LookupListIndex": {"0": [2, 1]}}}, "3": {"Feature": {"LookupListIndex": {"0": [7, 5]}}}, "4": {"Feature": {"LookupListIndex": {"0": [5, 3]}}}}}, "LookupList": {"Lookup": {"0": {"SubTable": {"0": {"mapping": {"u1E942": ["u1E920", null], "u1E936": ["u1E914", null], "u1E928": ["u1E906", null], "u1E943": ["u1E921", null], "u1E930": ["u1E90E", null], "u1E925": ["u1E903", null], "u1E933": ["u1E911", null], "u1E92A": ["u1E908", null], "u1E92C": ["u1E90A", null], "u1E92E": ["u1E90C", null], "u1E934": ["u1E912", null], "u1E923.medi": ["u1E901", null], "u1E92B": ["u1E909", null], "u1E939": ["u1E917", null], "u1E927": ["u1E905", null], "u1E93C": ["u1E91A", null], "u1E924": ["u1E902", null], "u1E932": ["u1E910", null], "u1E93B": ["u1E919", null], "u1E923": [null, "u1E923.medi"], "u1E937": ["u1E915", null], "u1E93F": ["u1E91D", null], "u1E93E": ["u1E91C", null], "u1E940": ["u1E91E", null], "u1E92F": ["u1E90D", null], "u1E92D": ["u1E90B", null], "u1E938": ["u1E916", null], "u1E93D": ["u1E91B", null], "u1E941": ["u1E91F", null], "u1E935": ["u1E913", null], "u1E929": ["u1E907", null], "u1E926": ["u1E904", null], "u1E922": ["u1E900", null], "u1E93A": ["u1E918", null], "u1E931": ["u1E90F", null]}}}}, "1": {"LookupType": [3, 6], "SubTableCount": [1, 3], "LookupFlag": [0, 1], "SubTable": {"0": {"alternates": {"u1E923": {"0": ["u1E901", null], "1": ["u1E923.medi", null]}}, "SubstCount": [null, 1], "Format": [null, 3], "LookAheadGlyphCount": [null, 0], "InputGlyphCount": [null, 1], "BacktrackCoverage": {"0": {"glyphs": {"0": [null, "u1E900"], "1": [null, "u1E904"], "2": [null, "u1E907"], "3": [null, "u1E915"], "4": [null, "u1E901"], "5": [null, "u1E90D"], "6": [null, "u1E909"], "7": [null, "u1E90A"], "8": [null, "u1E918"], "9": [null, "u1E91E"], "10": [null, "u1E916"], "11": [null, "u1E90B"], "12": [null, "u1E914"], "13": [null, "u1E911"], "14": [null, "u1E91D"], "15": [null, "u1E920"], "16": [null, "u1E902"], "17": [null, "u1E903"], "18": [null, "u1E91B"], "19": [null, "u1E910"], "20": [null, "u1E919"], "21": [null, "u1E90C"], "22": [null, "u1E906"], "23": [null, "u1E917"], "24": [null, "u1E908"], "25": [null, "u1E921"], "26": [null, "u1E905"], "27": [null, "u1E91A"], "28": [null, "u1E913"], "29": [null, "u1E91C"], "30": [null, "u1E90F"], "31": [null, "u1E912"], "32": [null, "u1E90E"], "33": [null, "u1E91F"]}}}, "SubstLookupRecord": {"0": {"SequenceIndex": [null, 0], "LookupListIndex": [null, 2]}}, "InputCoverage": {"0": {"glyphs": {"0": [null, "u1E944"], "1": [null, "u1E946"], "2": [null, "u1E945"]}}}, "BacktrackGlyphCount": [null, 1]}, "1": {"Format": [null, 3], "BacktrackGlyphCount": [null, 2], "BacktrackCoverage": {"0": {"glyphs": {"0": [null, "u1E944"], "1": [null, "u1E944.case"], "2": [null, "u1E948"], "3": [null, "u1E949"], "4": [null, "u1E946"], "5": [null, "u1E946.case"], "6": [null, "u1E947"], "7": [null, "u1E945"], "8": [null, "u1E945.case"]}}, "1": {"glyphs": {"0": [null, "u1E900"], "1": [null, "u1E904"], "2": [null, "u1E907"], "3": [null, "u1E915"], "4": [null, "u1E901"], "5": [null, "u1E90D"], "6": [null, "u1E909"], "7": [null, "u1E90A"], "8": [null, "u1E918"], "9": [null, "u1E91E"], "10": [null, "u1E916"], "11": [null, "u1E90B"], "12": [null, "u1E914"], "13": [null, "u1E911"], "14": [null, "u1E91D"], "15": [null, "u1E920"], "16": [null, "u1E902"], "17": [null, "u1E903"], "18": [null, "u1E91B"], "19": [null, "u1E910"], "20": [null, "u1E919"], "21": [null, "u1E90C"], "22": [null, "u1E906"], "23": [null, "u1E917"], "24": [null, "u1E908"], "25": [null, "u1E921"], "26": [null, "u1E905"], "27": [null, "u1E91A"], "28": [null, "u1E913"], "29": [null, "u1E91C"], "30": [null, "u1E90F"], "31": [null, "u1E912"], "32": [null, "u1E90E"], "33": [null, "u1E91F"], "34": [null, "u1E922"], "35": [null, "apostropheadlam"], "36": [null, "u1E926"], "37": [null, "u1E929"], "38": [null, "u1E937"], "39": [null, "u1E923"], "40": [null, "u1E923.medi"], "41": [null, "u1E92F"], "42": [null, "uni25CC"], "43": [null, "u1E92B"], "44": [null, "u1E92C"], "45": [null, "u1E93A"], "46": [null, "u1E940"], "47": [null, "u1E938"], "48": [null, "u1E92D"], "49": [null, "u1E936"], "50": [null, "u1E933"], "51": [null, "u1E93F"], "52": [null, "u1E942"], "53": [null, "u1E924"], "54": [null, "u1E925"], "55": [null, "u1E93D"], "56": [null, "u1E932"], "57": [null, "u1E93B"], "58": [null, "u1E92E"], "59": [null, "u1E928"], "60": [null, "u1E939"], "61": [null, "u1E92A"], "62": [null, "u1E943"], "63": [null, "u1E927"], "64": [null, "u1E93C"], "65": [null, "u1E935"], "66": [null, "u1E93E"], "67": [null, "u1E931"], "68": [null, "u1E934"], "69": [null, "u1E930"], "70": [null, "u1E941"]}}}, "InputGlyphCount": [null, 1], "InputCoverage": {"0": {"glyphs": {"0": [null, "u1E94A"]}}}, "LookAheadGlyphCount": [null, 0], "SubstCount": [null, 1], "SubstLookupRecord": {"0": {"SequenceIndex": [null, 0], "LookupListIndex": [null, 2]}}}, "2": {"Format": [null, 3], "BacktrackGlyphCount": [null, 1], "BacktrackCoverage": {"0": {"glyphs": {"0": [null, "u1E900"], "1": [null, "u1E904"], "2": [null, "u1E907"], "3": [null, "u1E915"], "4": [null, "u1E901"], "5": [null, "u1E90D"], "6": [null, "u1E909"], "7": [null, "u1E90A"], "8": [null, "u1E918"], "9": [null, "u1E91E"], "10": [null, "u1E916"], "11": [null, "u1E90B"], "12": [null, "u1E914"], "13": [null, "u1E911"], "14": [null, "u1E91D"], "15": [null, "u1E920"], "16": [null, "u1E902"], "17": [null, "u1E903"], "18": [null, "u1E91B"], "19": [null, "u1E910"], "20": [null, "u1E919"], "21": [null, "u1E90C"], "22": [null, "u1E906"], "23": [null, "u1E917"], "24": [null, "u1E908"], "25": [null, "u1E921"], "26": [null, "u1E905"], "27": [null, "u1E91A"], "28": [null, "u1E913"], "29": [null, "u1E91C"], "30": [null, "u1E90F"], "31": [null, "u1E912"], "32": [null, "u1E90E"], "33": [null, "u1E91F"], "34": [null, "u1E922"], "35": [null, "apostropheadlam"], "36": [null, "u1E926"], "37": [null, "u1E929"], "38": [null, "u1E937"], "39": [null, "u1E923"], "40": [null, "u1E923.medi"], "41": [null, "u1E92F"], "42": [null, "uni25CC"], "43": [null, "u1E92B"], "44": [null, "u1E92C"], "45": [null, "u1E93A"], "46": [null, "u1E940"], "47": [null, "u1E938"], "48": [null, "u1E92D"], "49": [null, "u1E936"], "50": [null, "u1E933"], "51": [null, "u1E93F"], "52": [null, "u1E942"], "53": [null, "u1E924"], "54": [null, "u1E925"], "55": [null, "u1E93D"], "56": [null, "u1E932"], "57": [null, "u1E93B"], "58": [null, "u1E92E"], "59": [null, "u1E928"], "60": [null, "u1E939"], "61": [null, "u1E92A"], "62": [null, "u1E943"], "63": [null, "u1E927"], "64": [null, "u1E93C"], "65": [null, "u1E935"], "66": [null, "u1E93E"], "67": [null, "u1E931"], "68": [null, "u1E934"], "69": [null, "u1E930"], "70": [null, "u1E941"]}}}, "InputGlyphCount": [null, 1], "InputCoverage": {"0": {"glyphs": {"0": [null, "u1E94A"]}}}, "LookAheadGlyphCount": [null, 1], "LookAheadCoverage": {"0": {"glyphs": {"0": [null, "u1E944"], "1": [null, "u1E944.case"], "2": [null, "u1E948"], "3": [null, "u1E949"], "4": [null, "u1E946"], "5": [null, "u1E946.case"], "6": [null, "u1E947"], "7": [null, "u1E945"], "8": [null, "u1E945.case"]}}}, "SubstCount": [null, 1], "SubstLookupRecord": {"0": {"SequenceIndex": [null, 0], "LookupListIndex": [null, 2]}}}}}, "2": {"LookupType": [6, 1], "SubTableCount": [3, 1], "SubTable": {"0": {"SubstCount": [1, null], "Format": [3, null], "LookAheadGlyphCount": [0, null], "mapping": {"u1E944": [null, "u1E944.case"], "u1E946": [null, "u1E946.case"], "u1E94A": [null, "u1E94A.below"], "u1E945": [null, "u1E945.case"]}, "InputGlyphCount": [1, null], "InputCoverage": {"0": {"glyphs": {"0": ["u1E944", null], "1": ["u1E946", null], "2": ["u1E945", null]}}}, "SubstLookupRecord": {"0": {"SequenceIndex": [0, null], "LookupListIndex": [3, null]}}, "BacktrackCoverage": {"0": {"glyphs": {"0": ["u1E900", null], "1": ["u1E904", null], "2": ["u1E907", null], "3": ["u1E915", null], "4": ["u1E901", null], "5": ["u1E90D", null], "6": ["u1E909", null], "7": ["u1E90A", null], "8": ["u1E918", null], "9": ["u1E91E", null], "10": ["u1E916", null], "11": ["u1E90B", null], "12": ["u1E914", null], "13": ["u1E911", null], "14": ["u1E91D", null], "15": ["u1E920", null], "16": ["u1E902", null], "17": ["u1E903", null], "18": ["u1E91B", null], "19": ["u1E910", null], "20": ["u1E919", null], "21": ["u1E90C", null], "22": ["u1E906", null], "23": ["u1E917", null], "24": ["u1E908", null], "25": ["u1E921", null], "26": ["u1E905", null], "27": ["u1E91A", null], "28": ["u1E913", null], "29": ["u1E91C", null], "30": ["u1E90F", null], "31": ["u1E912", null], "32": ["u1E90E", null], "33": ["u1E91F", null]}}}, "BacktrackGlyphCount": [1, null]}, "1": {"Format": [3, null], "BacktrackGlyphCount": [2, null], "BacktrackCoverage": {"0": {"glyphs": {"0": ["u1E944", null], "1": ["u1E944.case", null], "2": ["u1E948", null], "3": ["u1E949", null], "4": ["u1E946", null], "5": ["u1E946.case", null], "6": ["u1E947", null], "7": ["u1E945", null], "8": ["u1E945.case", null]}}, "1": {"glyphs": {"0": ["u1E900", null], "1": ["u1E904", null], "2": ["u1E907", null], "3": ["u1E915", null], "4": ["u1E901", null], "5": ["u1E90D", null], "6": ["u1E909", null], "7": ["u1E90A", null], "8": ["u1E918", null], "9": ["u1E91E", null], "10": ["u1E916", null], "11": ["u1E90B", null], "12": ["u1E914", null], "13": ["u1E911", null], "14": ["u1E91D", null], "15": ["u1E920", null], "16": ["u1E902", null], "17": ["u1E903", null], "18": ["u1E91B", null], "19": ["u1E910", null], "20": ["u1E919", null], "21": ["u1E90C", null], "22": ["u1E906", null], "23": ["u1E917", null], "24": ["u1E908", null], "25": ["u1E921", null], "26": ["u1E905", null], "27": ["u1E91A", null], "28": ["u1E913", null], "29": ["u1E91C", null], "30": ["u1E90F", null], "31": ["u1E912", null], "32": ["u1E90E", null], "33": ["u1E91F", null], "34": ["u1E922", null], "35": ["apostropheadlam", null], "36": ["u1E926", null], "37": ["u1E929", null], "38": ["u1E937", null], "39": ["u1E923", null], "40": ["u1E923.medi", null], "41": ["u1E92F", null], "42": ["u1E92B", null], "43": ["u1E92C", null], "44": ["u1E93A", null], "45": ["u1E940", null], "46": ["u1E938", null], "47": ["u1E92D", null], "48": ["u1E936", null], "49": ["u1E933", null], "50": ["u1E93F", null], "51": ["u1E942", null], "52": ["u1E924", null], "53": ["u1E925", null], "54": ["u1E93D", null], "55": ["u1E932", null], "56": ["u1E93B", null], "57": ["u1E92E", null], "58": ["u1E928", null], "59": ["u1E939", null], "60": ["u1E92A", null], "61": ["u1E943", null], "62": ["u1E927", null], "63": ["u1E93C", null], "64": ["u1E935", null], "65": ["u1E93E", null], "66": ["u1E931", null], "67": ["u1E934", null], "68": ["u1E930", null], "69": ["u1E941", null]}}}, "InputGlyphCount": [1, null], "InputCoverage": {"0": {"glyphs": {"0": ["u1E94A", null]}}}, "LookAheadGlyphCount": [0, null], "SubstCount": [1, null], "SubstLookupRecord": {"0": {"SequenceIndex": [0, null], "LookupListIndex": [3, null]}}}, "2": {"Format": [3, null], "BacktrackGlyphCount": [1, null], "BacktrackCoverage": {"0": {"glyphs": {"0": ["u1E900", null], "1": ["u1E904", null], "2": ["u1E907", null], "3": ["u1E915", null], "4": ["u1E901", null], "5": ["u1E90D", null], "6": ["u1E909", null], "7": ["u1E90A", null], "8": ["u1E918", null], "9": ["u1E91E", null], "10": ["u1E916", null], "11": ["u1E90B", null], "12": ["u1E914", null], "13": ["u1E911", null], "14": ["u1E91D", null], "15": ["u1E920", null], "16": ["u1E902", null], "17": ["u1E903", null], "18": ["u1E91B", null], "19": ["u1E910", null], "20": ["u1E919", null], "21": ["u1E90C", null], "22": ["u1E906", null], "23": ["u1E917", null], "24": ["u1E908", null], "25": ["u1E921", null], "26": ["u1E905", null], "27": ["u1E91A", null], "28": ["u1E913", null], "29": ["u1E91C", null], "30": ["u1E90F", null], "31": ["u1E912", null], "32": ["u1E90E", null], "33": ["u1E91F", null], "34": ["u1E922", null], "35": ["apostropheadlam", null], "36": ["u1E926", null], "37": ["u1E929", null], "38": ["u1E937", null], "39": ["u1E923", null], "40": ["u1E923.medi", null], "41": ["u1E92F", null], "42": ["u1E92B", null], "43": ["u1E92C", null], "44": ["u1E93A", null], "45": ["u1E940", null], "46": ["u1E938", null], "47": ["u1E92D", null], "48": ["u1E936", null], "49": ["u1E933", null], "50": ["u1E93F", null], "51": ["u1E942", null], "52": ["u1E924", null], "53": ["u1E925", null], "54": ["u1E93D", null], "55": ["u1E932", null], "56": ["u1E93B", null], "57": ["u1E92E", null], "58": ["u1E928", null], "59": ["u1E939", null], "60": ["u1E92A", null], "61": ["u1E943", null], "62": ["u1E927", null], "63": ["u1E93C", null], "64": ["u1E935", null], "65": ["u1E93E", null], "66": ["u1E931", null], "67": ["u1E934", null], "68": ["u1E930", null], "69": ["u1E941", null]}}}, "InputGlyphCount": [1, null], "InputCoverage": {"0": {"glyphs": {"0": ["u1E94A", null]}}}, "LookAheadGlyphCount": [1, null], "LookAheadCoverage": {"0": {"glyphs": {"0": ["u1E944", null], "1": ["u1E944.case", null], "2": ["u1E948", null], "3": ["u1E949", null], "4": ["u1E946", null], "5": ["u1E946.case", null], "6": ["u1E947", null], "7": ["u1E945", null], "8": ["u1E945.case", null]}}}, "SubstCount": [1, null], "SubstLookupRecord": {"0": {"SequenceIndex": [0, null], "LookupListIndex": [4, null]}}}}}, "3": {"LookupType": [1, 6], "SubTable": {"0": {"SubstCount": [null, 1], "Format": [null, 3], "LookAheadGlyphCount": [null, 0], "mapping": {"u1E944": ["u1E944.case", null], "u1E946": ["u1E946.case", null], "u1E94A": ["u1E94A.below", null], "u1E945": ["u1E945.case", null]}, "InputGlyphCount": [null, 1], "BacktrackCoverage": {"0": {"glyphs": {"0": [null, "u1E900"], "1": [null, "u1E904"], "2": [null, "u1E907"], "3": [null, "u1E915"], "4": [null, "u1E901"], "5": [null, "u1E90D"], "6": [null, "u1E909"], "7": [null, "u1E90A"], "8": [null, "u1E918"], "9": [null, "u1E91E"], "10": [null, "u1E916"], "11": [null, "u1E90B"], "12": [null, "u1E914"], "13": [null, "u1E911"], "14": [null, "u1E91D"], "15": [null, "u1E920"], "16": [null, "u1E902"], "17": [null, "u1E903"], "18": [null, "u1E91B"], "19": [null, "u1E910"], "20": [null, "u1E919"], "21": [null, "u1E90C"], "22": [null, "u1E906"], "23": [null, "u1E917"], "24": [null, "u1E908"], "25": [null, "u1E921"], "26": [null, "u1E905"], "27": [null, "u1E91A"], "28": [null, "u1E913"], "29": [null, "u1E91C"], "30": [null, "u1E90F"], "31": [null, "u1E912"], "32": [null, "u1E90E"], "33": [null, "u1E91F"], "34": [null, "u1E922"], "35": [null, "u1E944"], "36": [null, "u1E944.case"], "37": [null, "u1E926"], "38": [null, "u1E929"], "39": [null, "u1E937"], "40": [null, "u1E948"], "41": [null, "u1E923"], "42": [null, "u1E923.medi"], "43": [null, "u1E92F"], "44": [null, "u1E92B"], "45": [null, "u1E92C"], "46": [null, "u1E93A"], "47": [null, "u1E940"], "48": [null, "u1E949"], "49": [null, "u1E946"], "50": [null, "u1E946.case"], "51": [null, "u1E938"], "52": [null, "u1E947"], "53": [null, "u1E94A"], "54": [null, "u1E94A.below"], "55": [null, "u1E92D"], "56": [null, "u1E936"], "57": [null, "u1E933"], "58": [null, "uni0640"], "59": [null, "u1E93F"], "60": [null, "u1E942"], "61": [null, "u1E924"], "62": [null, "u1E925"], "63": [null, "u1E93D"], "64": [null, "u1E932"], "65": [null, "u1E93B"], "66": [null, "u1E92E"], "67": [null, "u1E928"], "68": [null, "u1E939"], "69": [null, "u1E92A"], "70": [null, "u1E943"], "71": [null, "u1E927"], "72": [null, "u1E93C"], "73": [null, "u1E935"], "74": [null, "u1E93E"], "75": [null, "u1E945"], "76": [null, "u1E945.case"], "77": [null, "u1E931"], "78": [null, "u1E934"], "79": [null, "u1E930"], "80": [null, "u1E941"]}}}, "SubstLookupRecord": {"0": {"SequenceIndex": [null, 0], "LookupListIndex": [null, 4]}}, "InputCoverage": {"0": {"glyphs": {"0": [null, "u1E923"]}}}, "BacktrackGlyphCount": [null, 1]}}}, "4": {"SubTable": {"0": {"mapping": {"u1E94A": ["u1E94A.below", null], "u1E923": [null, "u1E923.medi"]}}}}, "5": {"LookupType": [6, 1], "LookupFlag": [1, 0], "SubTable": {"0": {"SubstCount": [1, null], "Format": [3, null], "LookAheadGlyphCount": [0, null], "mapping": {"u1E923": [null, "u1E923.medi"]}, "InputGlyphCount": [1, null], "InputCoverage": {"0": {"glyphs": {"0": ["u1E923", null]}}}, "SubstLookupRecord": {"0": {"SequenceIndex": [0, null], "LookupListIndex": [6, null]}}, "BacktrackCoverage": {"0": {"glyphs": {"0": ["u1E900", null], "1": ["u1E904", null], "2": ["u1E907", null], "3": ["u1E915", null], "4": ["u1E901", null], "5": ["u1E90D", null], "6": ["u1E909", null], "7": ["u1E90A", null], "8": ["u1E918", null], "9": ["u1E91E", null], "10": ["u1E916", null], "11": ["u1E90B", null], "12": ["u1E914", null], "13": ["u1E911", null], "14": ["u1E91D", null], "15": ["u1E920", null], "16": ["u1E902", null], "17": ["u1E903", null], "18": ["u1E91B", null], "19": ["u1E910", null], "20": ["u1E919", null], "21": ["u1E90C", null], "22": ["u1E906", null], "23": ["u1E917", null], "24": ["u1E908", null], "25": ["u1E921", null], "26": ["u1E905", null], "27": ["u1E91A", null], "28": ["u1E913", null], "29": ["u1E91C", null], "30": ["u1E90F", null], "31": ["u1E912", null], "32": ["u1E90E", null], "33": ["u1E91F", null], "34": ["u1E922", null], "35": ["u1E944", null], "36": ["u1E944.case", null], "37": ["u1E926", null], "38": ["u1E929", null], "39": ["u1E937", null], "40": ["u1E948", null], "41": ["u1E923", null], "42": ["u1E923.medi", null], "43": ["u1E92F", null], "44": ["u1E92B", null], "45": ["u1E92C", null], "46": ["u1E93A", null], "47": ["u1E940", null], "48": ["u1E949", null], "49": ["u1E946", null], "50": ["u1E946.case", null], "51": ["u1E938", null], "52": ["u1E947", null], "53": ["u1E94A", null], "54": ["u1E94A.below", null], "55": ["u1E92D", null], "56": ["u1E936", null], "57": ["u1E933", null], "58": ["uni0640", null], "59": ["u1E93F", null], "60": ["u1E942", null], "61": ["u1E924", null], "62": ["u1E925", null], "63": ["u1E93D", null], "64": ["u1E932", null], "65": ["u1E93B", null], "66": ["u1E92E", null], "67": ["u1E928", null], "68": ["u1E939", null], "69": ["u1E92A", null], "70": ["u1E943", null], "71": ["u1E927", null], "72": ["u1E93C", null], "73": ["u1E935", null], "74": ["u1E93E", null], "75": ["u1E945", null], "76": ["u1E945.case", null], "77": ["u1E931", null], "78": ["u1E934", null], "79": ["u1E930", null], "80": ["u1E941", null]}}}, "BacktrackGlyphCount": [1, null]}}}, "6": {"LookupFlag": [1, 0], "SubTable": {"0": {"mapping": {"u1E946": [null, "u1E946.case"], "u1E944": [null, "u1E944.case"], "u1E945": [null, "u1E945.case"], "u1E923": ["u1E923.medi", null]}}}}, "7": {"LookupType": [1, null], "LookupFlag": [0, null], "SubTableCount": [1, null], "SubTable": {"0": {"mapping": {"u1E923": ["u1E923.medi", null]}}}}, "8": {"LookupType": [1, null], "LookupFlag": [0, null], "SubTableCount": [1, null], "SubTable": {"0": {"mapping": {"u1E922": ["u1E900", null], "u1E944": ["u1E944.case", null], "u1E926": ["u1E904", null], "u1E929": ["u1E907", null], "u1E937": ["u1E915", null], "u1E923": ["u1E901", null], "u1E923.medi": ["u1E901", null], "u1E92F": ["u1E90D", null], "u1E92B": ["u1E909", null], "u1E92C": ["u1E90A", null], "u1E93A": ["u1E918", null], "u1E940": ["u1E91E", null], "u1E946": ["u1E946.case", null], "u1E938": ["u1E916", null], "u1E92D": ["u1E90B", null], "u1E936": ["u1E914", null], "u1E933": ["u1E911", null], "u1E93F": ["u1E91D", null], "u1E942": ["u1E920", null], "u1E924": ["u1E902", null], "u1E925": ["u1E903", null], "u1E93D": ["u1E91B", null], "u1E932": ["u1E910", null], "u1E93B": ["u1E919", null], "u1E92E": ["u1E90C", null], "u1E928": ["u1E906", null], "u1E939": ["u1E917", null], "u1E92A": ["u1E908", null], "u1E943": ["u1E921", null], "u1E927": ["u1E905", null], "u1E93C": ["u1E91A", null], "u1E935": ["u1E913", null], "u1E93E": ["u1E91C", null], "u1E945": ["u1E945.case", null], "u1E931": ["u1E90F", null], "u1E934": ["u1E912", null], "u1E930": ["u1E90E", null], "u1E941": ["u1E91F", null]}}}}}, "LookupCount": [9, 7]}}}, "vmtx": {"tableTag": [null, "vmtx"], "metrics": {"error": ["There are 154 changes, check manually!", ""]}}};</script><div id="difftable"></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+
+    
+      <div class="box">
+        <div class="box-title">Misshapen Common words</div>
+        <div class="box-text old-wght-400" style="font-size: 32pt">
+          
+        </div>
+      </div>
+    
+      <div class="box">
+        <div class="box-title">Misshapen Adlam words</div>
+        <div class="box-text old-wght-400" style="font-size: 32pt">
+          
+        </div>
+      </div>
+    
+    
+    <div class="box">
+      <div class="box-title">Misshapen user strings</div>
+      <div class="box-text old-wght-400" style="font-size: 32pt">
+        
+      </div>
+    </div>
+    
+
+    
+
+    </div>
+  
+
+    </div>
+</body>
+	<script>
+
+	POSITION = "old"
+	fontToggle = document.getElementById("font-toggle")
+	function switchFonts() {
+	boxTitles = document.getElementsByClassName("box-title")
+	items = document.getElementsByClassName("box-text");
+	  
+	if (POSITION === "old") {
+	  POSITION = "new"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("old", "new")
+	    fontToggle.textContent = "new"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("old", "new")
+	  }
+
+	  } else {
+	  POSITION = "old"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("new", "old")
+	    fontToggle.textContent = "old"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("new", "old")
+	  }
+	}
+	}
+	if (fontToggle !== null) {
+		fontToggle.addEventListener("click", switchFonts);
+	}
+
+// apply optional ot feats
+
+function buildFeatureList() {
+	var features = [
+		'aalt', 'c2sc', 'calt', 'case', 'cpsp', 'dlig', 'dnom',
+		'fina', 'frac', 'init', 'kern', 'liga', 'lnum', 'numr', 'onum',
+		'ordn', 'pnum', 'salt', 'sinf', 'smcp', 'sups',
+		'swsh', 'titl', 'tnum', 'zero', 'ss01', 'ss02',
+		'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08',
+		'ss09', 'ss10', 'ss11', 'ss12', 'ss13', 'ss14',
+		'ss15', 'ss16', 'ss17', 'ss18', 'ss19', 'ss20'
+	]
+	
+	var otPanel = document.getElementById("ot-panel")
+	for (i=0; i<features.length; i++) {
+		var feat = features[i]
+		
+		var row = document.createElement("div");
+
+		var item = document.createElement("input");
+		item.type = "checkbox"
+		item.value = feat
+		item.classList.add("ot-checkbox")
+		var label = document.createElement("label")
+		label.textContent = feat
+
+		row.appendChild(item)
+		row.appendChild(label)
+
+		otPanel.appendChild(row)
+	}
+}
+
+buildFeatureList()
+
+
+function enableFeatures() {
+	var checkboxes = document.getElementsByClassName("ot-checkbox")
+	var res = []
+	var disableKerning = false
+	for (i=0; i<checkboxes.length; i++) {
+		if (checkboxes[i].checked === true) {
+			var checkbox = checkboxes[i]
+			res.push('"' + checkbox.value + '"')
+
+			if (checkbox.value === "kern") {
+				disableKerning = true
+			}
+		}
+	}	
+
+	var boxText = document.getElementsByClassName("box-text")
+	var otString = res.join(", ")
+	for (j=0; j<boxText.length; j++) {
+		boxText[j].style.fontFeatureSettings = otString
+		if (disableKerning === true) {
+			boxText[j].style.fontKerning = "none"
+		}
+	}
+}
+
+var otButton = document.getElementById("ot-button")
+otButton.addEventListener("click", function() {
+    otPanel = document.getElementById("ot-panel")
+    if (otPanel.style.display !== "block") {
+        otPanel.style.display = "block"
+    } else {
+        otPanel.style.display = "none"
+    }
+})
+var checkboxes = document.getElementsByClassName("ot-checkbox")
+for (i=0; i<checkboxes.length; i++) {
+	cb = checkboxes[i]
+	cb.addEventListener("click", enableFeatures)
+}	
+    
+	function render(node, toplevel) {
+		var wrapper = $("<div> </div>");
+		if (!node) { return wrapper }
+		if (Array.isArray(node)) {
+			var before = $("<span/>");
+			before.addClass("attr-before");
+			before.html(" " + String(node[0]) + " ");
+			var after = $("<span/>");
+			after.addClass("attr-after");
+			after.append(String(node[1]));
+			wrapper.append(before);
+			wrapper.append(after);
+			return wrapper
+		}
+		for (const [key, value] of Object.entries(node)) {
+			var display = $("<div/>");
+			display.addClass("node")
+			if (!toplevel && ! key.match(/^\d+$/)) {
+				display.hide()
+			}
+			display.append(key);
+			display.append(render(value, false).children());
+			wrapper.append(display)
+		}
+		return wrapper
+
+	}
+	$(function() {
+		$("#difftable").append(render(fontdiff, true).children())
+		$("#difftable .node").on("click", function(event){ $(this).children().toggle(); event.stopPropagation() })
+	});
+
+function wordBreaks() {
+  words = document.getElementsByClassName("cell-word")
+  res = []
+  prevTop = 0
+  for (i=0; i<words.length; i++) {
+      var word = words[i]
+      currentTop = word.getBoundingClientRect().top
+      if (currentTop > prevTop) {
+          res.push(i)
+      }
+      prevTop = currentTop
+  }
+  return res
+}
+
+async function insertBreaks() {
+  switchFonts()
+  await sleep(1)
+  breaksBefore = wordBreaks()
+  switchFonts()
+  await sleep(1)
+  breaksAfter = wordBreaks()
+
+
+  console.log(breaksBefore.length, breaksAfter.length)
+
+  if (breaksBefore.length >= breaksAfter.length) {
+    breaks = breaksBefore
+  } else {
+    breaks = breaksAfter
+  }
+
+  words = document.getElementsByClassName("cell-word")
+  breaks.forEach(function(i) {
+    if (i != 0) {
+      i = i
+    }
+    word = words[i]
+    spacer = document.createElement("div")
+    spacer.className = "spacer"
+    word.parentNode.insertBefore(spacer, word)
+  })
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  
+insertBreaks()
+
+
+    </script>
+</html>
