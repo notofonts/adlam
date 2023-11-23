@@ -1,10 +1,11 @@
 {
-.appVersion = "3180";
+.appVersion = "3225";
 DisplayStrings = (
 "/laam-adlam.init/yhe-adlam.fina",
 "/hamza-adlam",
 "/aliflengthencomb-adlam.case",
-"/gemconsonantmodcomb-adlam"
+"/gemconsonantmodcomb-adlam",
+"="
 );
 classes = (
 {
@@ -33507,19 +33508,19 @@ paths = (
 {
 closed = 1;
 nodes = (
-"528 204 LINE",
-"528 311 LINE",
-"43 311 LINE",
-"43 204 LINE"
+"528 394 LINE",
+"528 500 LINE",
+"43 500 LINE",
+"43 394 LINE"
 );
 },
 {
 closed = 1;
 nodes = (
-"528 394 LINE",
-"528 500 LINE",
-"43 500 LINE",
-"43 394 LINE"
+"528 204 LINE",
+"528 311 LINE",
+"43 311 LINE",
+"43 204 LINE"
 );
 }
 );
