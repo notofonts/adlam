@@ -377,7 +377,7 @@ disablesNiceNames = 1;
 familyName = "Noto Sans Adlam Unjoined";
 featurePrefixes = (
 {
-code = "languagesystem DFLT dflt;\012";
+code = "languagesystem DFLT dflt;\012\012languagesystem adlm dflt;\012";
 name = Languagesystems;
 },
 {
