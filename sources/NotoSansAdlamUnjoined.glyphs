@@ -1,7 +1,8 @@
 {
-.appVersion = "3180";
+.appVersion = "3243";
 DisplayStrings = (
-"/gemconsonantmodcomb-adlam"
+"/gemconsonantmodcomb-adlam",
+"/space/vowellengthencomb-adlam"
 );
 classes = (
 {
@@ -16324,5 +16325,5 @@ com.schriftgestaltung.Glyphs.groupsNotInFeature = (
 );
 };
 versionMajor = 3;
-versionMinor = 2;
+versionMinor = 3;
 }
